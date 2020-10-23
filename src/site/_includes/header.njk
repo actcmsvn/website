@@ -1,12 +1,16 @@
-<header>
-  <ul class="nav">
-    <li>
-      <a href="/">home<small>where the heart is</small></a>
-    </li>
-    <li>
-      <a href="/about">about<small>all about this</small></a>
-    </li>
-  </ul>
-  <h1>{{ title }}</h1>
-  {%- if subtitle %}<p class="subtitle">{{ subtitle | safe }}</p>{% endif %}
-</header>
+<header class="site-header header-one" id="header">
+  <nav class="navbar navbar-expand-lg navbar-light header-navigation">
+    <div class="container-fluid clearfix">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="logo-box clearfix">
+        <a class="navbar-brand" href="/">
+          <img src="images/logo.svg" class="main-logo" alt="ACTCMSVN" />
+        </a>
+      </div><!-- /.logo-box -->
+      <a data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1200"
+      class="main-navigation thm-btn-outline" href="mailto:support@innosoft.com.vn">Get in touch <img alt="ACTCMSVN" class="img-btn"
+        src="images/get.svg"/></a>
+    </div>
+    <!-- /.container -->
+  </nav>
+</header><!-- /.header-one -->
