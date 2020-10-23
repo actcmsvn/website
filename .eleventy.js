@@ -33,6 +33,7 @@ module.exports = function(config) {
   });
 
   config.addPassthroughCopy('./src/site/_includes/postcss');
+  config.addPassthroughCopy('./src/site/_includes/fonts');
 
   // pass some assets right through
   config.addPassthroughCopy("./src/site/images");
