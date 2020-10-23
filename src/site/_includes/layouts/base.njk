@@ -80,12 +80,12 @@
   <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
 
     {% set js %}
-      {% "js/jquery.js" %}
-      {% "js/bootstrap.bundle.min.js" %}
-      {% "js/owl.carousel.min.js" %}
-      {% "js/jquery.lazy.min.js" %}
-      {% "js/jquery.easing.min.js" %}
-      {% "js/theme.js" %}
+      {% include "js/jquery.js" %}
+      {% include "js/bootstrap.bundle.min.js" %}
+      {% include "js/owl.carousel.min.js" %}
+      {% include "js/jquery.lazy.min.js" %}
+      {% include "js/jquery.easing.min.js" %}
+      {% include "js/theme.js" %}
       {% include "js/hello.js" %}
     {% endset %}
     <script>{{ js | jsmin | safe }}</script>
@@ -197,6 +197,3 @@
       </script>
 </body>
 </html>
-
-
-
