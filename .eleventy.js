@@ -32,7 +32,7 @@ module.exports = function(config) {
       return minified.code;
   });
 
-  config.addPassthroughCopy('./src/site/_includes/css');
+  config.addPassthroughCopy('./src/site/_includes/pagecss');
   config.addPassthroughCopy('./src/site/_includes/fonts');
 
   // pass some assets right through
