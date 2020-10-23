@@ -1,12 +1,75 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles.css">
+    <link href="images/favicon.ico" rel="icon"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="MobileOptimized" content="width" />
+  <meta name="HandheldFriendly" content="true" />
+  <!-- Primary Meta Tags -->
+  <meta name="description" content="ACTCMSVN is an IT company, We provide our clients with unique solutions of any level of complexity.">
     <title>{{ title }}</title>
-  </head>
+  <meta name="distribution" content="Global">
+  <meta name="rating" content="All">
+  <meta name="revisit-after" content="90">
+  <meta name="keywords" content="actcmsvn, design, website e-commerce, shopping cart, landing page, webapp, mobile app  ios, android, ui design, can tho, viet nam, taiwan ">
+  <link href="/" rel="canonical" />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://actcms.work">
+  <meta property="og:title" content="actcmsvn Vietnam - Technology & Design">
+  <meta property="og:description" content="Digital product studio focuses on web & mobile app development, IT solution and UX/UI design.">
+  <meta property="og:image" content="https://actcms.work/images/seo.jpg">
+  <meta name="author" content="actcmsvn">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://actcms.work">
+  <meta property="twitter:title" content="ACTCMS Vietnam - Technology & Design">
+  <meta property="twitter:description" content="Digital product studio focuses on web & mobile app development, IT solution and UX/UI design.">
+  <meta property="twitter:image" content="https://actcms.work/images/seo.jpg">
+  <link href="css/main.css" rel="stylesheet" />
+  <link href="css/owl.carousel.css" rel="stylesheet" />
+  <link href="css/mobile.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180236866-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-180236866-1');
+    </script>
+
+</head>
   <body {% if bodyClass %}class="{{ bodyClass }}"{% endif %}>
+    <div id="preloader">
+    <div id="ctn-preloader" class="ctn-preloader">
+      <div class="animation-preloader">
+        <div class="spinner"></div>
+        <p class="text-center">Loading</p>
+      </div>
+      <div class="loader">
+        <div class="row">
+          <div class="col-3 loader-section section-left">
+            <div class="bg"></div>
+          </div>
+          <div class="col-3 loader-section section-left">
+            <div class="bg"></div>
+          </div>
+          <div class="col-3 loader-section section-right">
+            <div class="bg"></div>
+          </div>
+          <div class="col-3 loader-section section-right">
+            <div class="bg"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.preloader -->
 
     <div class="container">
       {% include "header.njk" %}
@@ -20,7 +83,153 @@
     {% endset %}
     <script>{{ js | jsmin | safe }}</script>
 
-  </body>
+  <hr class="mt-5">
+    <footer class="site-footer">
+      <div class="site-footer__upper">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <div class="footer-widget footer-widget__subscribe">
+                <img alt="ACTCMSVN" src="images/logo_full.svg" />
+              </div>
+            </div>
+            <div class="col-lg-8 col-md-6 col-sm-12 p-0">
+              <p data-aos="fade-up" data-delay-duration="1000" data-aos-duration="800" class="site-footer__copy mb-3">Ready to get started? Have questions? Feel free to reach out at anytime!</p>
+              <a data-aos="fade-up" data-delay-duration="1000" data-aos-duration="1000" class="site-footer__mail" href="mailto:support@actcms.wwork">support@actcms.wwork</a>
+            </div>
+          </div>
+        </div>
+        <!-- /.container -->
+      </div>
+      <div class="site-footer__bottom">
+        <div class="container-fluid">
+          <div class="row">
+            <p class="mt-5 site-footer__copy col-lg-8 col-md-8 col-sm-8 col-xs-12">Copyright ©2020 ACTCMS Viet Nam</a>. All rights reserved</p>
+            <div class="mt-3 mb-5 site-footer__social col-lg-4 col-md-4 col-sm-4 col-xs-12">
+              <a href="#" class="linkedin" target="_blank"> <img alt="InnosoftVN" src="images/linkedin.svg" /></a>
+              <a href="https://www.facebook.com/innosoftTechDes" class="facebook" target="_blank"> <img alt="InnosoftVN" src="images/facebook.svg" /></a>
+              <a href="#" class="twitter" target="_blank"> <img alt="InnosoftVN" src="images/twitter.svg" /></a>
+            </div><!-- /.site-footer__social -->
+          </div><!-- /.inner-container -->
+        </div><!-- /.container -->
+      </div>
+      <!-- /.site-footer__bottom -->
+    </footer>
+  </div>
+  <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.lazy.min.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="js/theme.js"></script>
+  <script>
+    AOS.init();
+    var owl = $('.owl-carousel');
+    var owl2 = $('.owl-carousel_2');
+    owl.owlCarousel({
+      loop:true,
+      margin:30,
+      nav:true,
+      navText: ["<img src='images/previous.svg'>","<img src='images/next.svg'>"],
+      autoHeight:true,
+      dots: false,
+            autoWidth: false,
+            autoplay: true,
+            smartSpeed: 700,
+            autoplayTimeout: 5000,
+            autoplayHoverPause: true,
+      touchDrag: true,
+      responsive: {
+                0: {
+                    items: 1
+                },
+                480: {
+                    items: 1
+                },
+                600: {
+                    items: 1
+                },
+                991: {
+                    items: 1
+                },
+                1000: {
+                    items: 1
+                },
+                1200: {
+                    items: 1
+                }
+            }
+    });
+    owl2.owlCarousel({
+      loop:true,
+      margin:30,
+      nav:true,
+      navText: ["<img src='images/previous.svg'>","<img src='images/next.svg'>"],
+      items:1,
+      autoHeight:true,
+      dots: false,
+            autoWidth: false,
+            autoplay: true,
+            smartSpeed: 700,
+            autoplayTimeout: 5000,
+            autoplayHoverPause: true,
+      touchDrag: true,
+      responsive: {
+                0: {
+                    items: 1
+                },
+                480: {
+                    items: 1
+                },
+                600: {
+                    items: 1
+                },
+                991: {
+                    items: 1
+                },
+                1000: {
+                    items: 1
+                },
+                1200: {
+                    items: 1
+                }
+            }
+    });
+  </script>
+  <script>
+    function openNav() {
+      document.getElementById("myNav").style.width = "30%";
+    }
+    
+    function closeNav() {
+      document.getElementById("myNav").style.width = "0%";
+    }
+    </script>
+    <script>
+      var appendNumber = 5;
+        var prependNumber = 1;
+      var swiper = new Swiper('.swiper-container', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        spaceBetween: 30,
+        coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+        },
+        navigation: {
+          nextEl: '.button-next',
+          prevEl: '.button-prev',
+        },
+      });
+      </script>
+</body>
 </html>
 
 
