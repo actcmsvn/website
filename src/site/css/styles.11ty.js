@@ -4,7 +4,7 @@ const postcss = require('postcss');
 
 // the file name as an entry point for postcss compilation
 // also used to define the output filename in our output /css folder.
-const fileName = "styles.css";
+const fileName = "main.css";
 
 
 module.exports = class {
