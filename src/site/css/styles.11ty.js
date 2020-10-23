@@ -5,6 +5,9 @@ const postcss = require('postcss');
 // the file name as an entry point for postcss compilation
 // also used to define the output filename in our output /css folder.
 const fileName = "main.css";
+const fileName = "mobile.css";
+const fileName = "owl.carousel.css";
+
 
 module.exports = class {
   async data () {
