@@ -32,6 +32,7 @@ module.exports = function(config) {
       return minified.code;
   });
 
+  config.addPassthroughCopy('./src/site/_includes/postcss');
 
   // pass some assets right through
   config.addPassthroughCopy("./src/site/images");
