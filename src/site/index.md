@@ -1,6 +1,6 @@
 ---
-title: ActCMS
-subtitle: ACTCMS Vietnam.
+title: ACTCMS Vietnam
+subtitle: ACTCMS is an IT company, We provide our clients with unique solutions of any level of complexity.
 layout: layouts/base.njk
 ---
 <section class="banner-two" id="home">
