@@ -412,7 +412,7 @@ hr{
   border: 1px solid #28a745;
   outline: none !important;
   cursor: pointer;
-  background-color: rgba(231,45,75,0.45);
+  background-color: rgba(0,123,255,0.45);
   color: #ffffff;
   font-size: 15px;
   font-weight: 500;
@@ -519,7 +519,7 @@ hr{
   display: inline-block;
   width: 45px;
   height: 45px;
-  background: rgba(231,45,75,0.45);
+  background: rgba(0,123,255,0.45);
   position: fixed;
   bottom: 40px;
   right: 40px;
@@ -888,11 +888,11 @@ hr{
   }
   94% {
     stroke-dashoffset: 0;
-    fill: rgba(231,45,75,0.45);
+    fill: rgba(0,123,255,0.45);
   }
   100% {
     stroke-dashoffset: 0;
-    fill: rgba(231,45,75,0.45);
+    fill: rgba(0,123,255,0.45);
   }
 }
 @keyframes outer-anim {
@@ -908,11 +908,11 @@ hr{
   }
   94% {
     stroke-dashoffset: 0;
-    fill: rgba(231,45,75,0.45);
+    fill: rgba(0,123,255,0.45);
   }
   100% {
     stroke-dashoffset: 0;
-    fill: rgba(231,45,75,0.45);
+    fill: rgba(0,123,255,0.45);
   }
 }
 .description{
@@ -988,13 +988,13 @@ hr{
   line-height: 40px;
 }
 .skill_case {
-  border: 1px solid rgba(231,45,75,0.45);
+  border: 1px solid rgba(0,123,255,0.45);
   min-height: 500px;
   margin-bottom: 32px;
 }
 .skill_case:hover {
   border: 1px solid #28a745;
-  background-color: rgba(231,45,75,0.45);
+  background-color: rgba(0,123,255,0.45);
 }
 .banner-one__title {
   color: #fff;
@@ -1292,7 +1292,7 @@ transition: all .4s ease;
   vertical-align: middle;
   -webkit-transition: all .4s ease;
   transition: all .4s ease;
-  background-color: rgba(231,45,75,0.45); 
+  background-color: rgba(0,123,255,0.45); 
   width: 50px;
   height: 50px;
   border-radius: 50%;
