@@ -36,26 +36,13 @@
 * 2. common styles
 */
 body {
-  font-family: 'spacegrotesk', sans-serif;
+  font-family:Comfortaa,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 16px;
   line-height: 24px;
   background-color: #282D31;
   color: #fff;
 }
-@font-face {
-  font-family: "spacegrotesk";
-  src: url("../fonts/SpaceGrotesk-Regular.woff") format('woff');
-}
-@font-face {
-  font-family: "spacegrotesk";
-  src: url("../fonts/SpaceGrotesk-SemiBold.woff") format('woff');
-  font-weight: 500;
-}
-@font-face {
-  font-family: "spacegrotesk";
-  src: url("../fonts/SpaceGrotesk-Bold.woff") format('woff');
-  font-weight: bold;
-}
+
 .container-fluid {
   padding: 0 1.25rem;
   width: 100%;
