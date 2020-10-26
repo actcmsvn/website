@@ -10,7 +10,7 @@ layout: layouts/base.njk
 				<p data-aos="fade-up" data-delay-duration="4000" data-aos-duration="1000" class="banner-one__text">Welcome to ACTCMS</p>
 				<h2 data-aos="fade-up" data-delay-duration="4000" data-aos-duration="1500" class="banner-one__title">Technology & Design</h2>
 					<p data-aos="fade-up" data-delay-duration="4000" data-aos-duration="2000" class="description">
-						A digital creative studio focuses on web, mobile app, IT solution and UI/UX design. We are not <span style="text-decoration-line:line-through; color:rgba(231,45,75,0.85); ">programmers</span>, we are <em style="text-decoration-line:underline; color: rgba(231,45,75,0.85); ">passionate developers</em> who will provide intelligent solutions to solve your business. </p>
+						A digital creative studio focuses on web, mobile app, IT solution and UI/UX design. We are not <span style="text-decoration-line:line-through; color:rgba(0,123,255,.85); ">programmers</span>, we are <em style="text-decoration-line:underline; color: rgba(0,123,255,.85); ">passionate developers</em> who will provide intelligent solutions to solve your business. </p>
 				<!-- /.banner-one__title -->
 			</div>
 			<!-- /.banner-one__content -->

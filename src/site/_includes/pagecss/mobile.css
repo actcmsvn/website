@@ -622,7 +622,7 @@ hr{
         margin: 0;
         font-size: 14px;
         line-height: 30px;
-        color: rgba(231,45,75,0.85);
+        color: rgba(0,123,255,.85);
         margin-bottom: 25px;
         -webkit-transition: all .4s ease;
         transition: all .4s ease;
@@ -784,7 +784,7 @@ hr{
         margin: 0;
         font-size: 14px;
         line-height: 30px;
-        color: rgba(231,45,75,0.85);
+        color: rgba(0,123,255,.85);
         margin-bottom: 25px;
         -webkit-transition: all .4s ease;
         transition: all .4s ease;
@@ -918,7 +918,7 @@ hr{
       .banner-one__text {
         font-size: 14px;
         line-height: 34px;
-        color: rgba(231,45,75,0.85);
+        color: rgba(0,123,255,.85);
         margin-bottom: 25px;
         -webkit-transition: all .4s ease;
         transition: all .4s ease;

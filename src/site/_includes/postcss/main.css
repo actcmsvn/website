@@ -1025,7 +1025,7 @@ hr{
   font-size: 12px;
   font-weight: 500;
   line-height: 34px;
-  color: rgba(231,45,75,0.85);
+  color: rgba(0,123,255,.85);
   letter-spacing: 5px;
   text-transform: uppercase;
   -webkit-transition: all .4s ease;
@@ -1034,7 +1034,7 @@ hr{
 .banner-one__sub {
   font-size: 12px;
   line-height: 18px;
-  color: rgba(231,45,75,0.85);
+  color: rgba(0,123,255,.85);
   letter-spacing: 2px;
   text-transform: uppercase;
   -webkit-transition: all .4s ease;
@@ -1093,7 +1093,7 @@ hr{
   transition: border-color .2s ease;
 }
 .border-blur:focus-within,.border-blur:hover{
-  border: 2px solid rgba(231,45,75,0.85);
+  border: 2px solid rgba(0,123,255,.85);
   transition: border-color .2s ease;
 }
 .input-form.reqError {
