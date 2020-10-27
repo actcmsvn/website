@@ -114,7 +114,7 @@ layout: layouts/base.njk
 					</div>	
 				</div>
 			</div>
-			<div class="bg_case_2">
+			<div class="bg_case_6">
 				<div class="row">
 					<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
 						<img alt="ACTCMSVN" src="images/ex_7.svg" width="20%"/>
