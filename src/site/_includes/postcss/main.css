@@ -968,6 +968,16 @@ hr{
   min-height: 650px;
   padding: 70px;
 }
+.bg_case_5{
+  background-color: #198836;
+  min-height: 650px;
+  padding: 70px;
+}
+.bg_case_6{
+  background-color: #7c1988;
+  min-height: 650px;
+  padding: 70px;
+}
 .client_say{
   color: #fff;
   font-size: 30px;

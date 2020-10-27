@@ -101,6 +101,32 @@ layout: layouts/base.njk
 					</div>	
 				</div>
 			</div>
+			<div class="bg_case_5">
+				<div class="row">
+					<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+						<img alt="ACTCMSVN" src="images/ex_7.svg" width="20%"/>
+						<h4 class="mt-5 banner-one__title_case">Web platform & mobile app for superS </h4>
+						<p>superS - Super market is a combination of style and new food and dishes.</p>
+						<a class="thm-btn-case thm-btn mt-5" href="http://ssm.actcms.work/admin" target="_blank">Live Version <img alt="ACTCMSVN" class="img-btn" src="images/live.svg" /></a>
+					</div>
+					<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 mt-5">
+						<img src="images/ssm.jpg" class="img-case" width="120%">
+					</div>	
+				</div>
+			</div>
+			<div class="bg_case_2">
+				<div class="row">
+					<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+						<img alt="ACTCMSVN" src="images/ex_6.svg" width="20%"/>
+						<h4 class="mt-5 banner-one__title_case">Web platform & mobile app for School </h4>
+						<p>SMS - School Management System. Provide you everything in a one package.</p>
+						<a class="thm-btn-case thm-btn mt-5" href="htts://sms.axcrcms.work/" target="_blank">Live Version <img alt="ACTCMSVN" class="img-btn" src="images/live.svg" /></a>
+					</div>
+					<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 mt-5">
+						<img src="images/sms.jpg" class="img-case" width="120%">
+					</div>	
+				</div>
+			</div>
 		</div>
 		<!-- /.container -->
 	</div>
