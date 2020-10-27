@@ -120,7 +120,7 @@ layout: layouts/base.njk
 						<img alt="ACTCMSVN" src="images/ex_7.svg" width="20%"/>
 						<h4 class="mt-5 banner-one__title_case">Web platform & mobile app for School </h4>
 						<p>SMS - School Management System. Provide you everything in a one package.</p>
-						<a class="thm-btn-case thm-btn mt-5" href="htts://sms.actcms.work/" target="_blank">Live Version <img alt="ACTCMSVN" class="img-btn" src="images/live.svg" /></a>
+						<a class="thm-btn-case thm-btn mt-5" href="http://sms.actcms.work/" target="_blank">Live Version <img alt="ACTCMSVN" class="img-btn" src="images/live.svg" /></a>
 					</div>
 					<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 mt-5">
 						<img src="images/sms.jpg" class="img-case" width="120%">
