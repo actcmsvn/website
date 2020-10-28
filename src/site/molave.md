@@ -1,8 +1,3 @@
----
-title: ACTCMS Vietnam
-subtitle: ACTCMS is an IT company, We provide our clients with unique solutions of any level of complexity.
-layout: layouts/app.njk
----
 <script>
     $(document).ready(function () {
         if (window.matchMedia("(max-width: 767px)").matches) {
@@ -266,83 +261,83 @@ C48914.setIcon(IconL_28);
     });
 
     
- L.circle([13.1, 129.7],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208681/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
+ L.circle([13.1, 129.7],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208710/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
 var point_30_0 = new L.LatLng(13.1, 129.7);
 
- L.circle([13.3, 128.7],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208682/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
+ L.circle([13.3, 128.7],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208711/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
 var point_30_1 = new L.LatLng(13.3, 128.7);
 
- L.circle([13.4, 127.8],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208683/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
+ L.circle([13.4, 127.8],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208712/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
 var point_30_2 = new L.LatLng(13.4, 127.8);
 
- L.circle([13.5, 126.5],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208684/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
+ L.circle([13.5, 126.5],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208713/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
 var point_30_3 = new L.LatLng(13.5, 126.5);
 
- L.circle([13.5, 124.8],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208685/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
+ L.circle([13.5, 124.8],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208714/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
 var point_30_4 = new L.LatLng(13.5, 124.8);
 
- L.circle([13.5, 123.2],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208686/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
+ L.circle([13.5, 123.2],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208715/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
 var point_30_5 = new L.LatLng(13.5, 123.2);
 
- L.circle([13.5, 122.2],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208687/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
+ L.circle([13.5, 122.2],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208716/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
 var point_30_6 = new L.LatLng(13.5, 122.2);
 
- L.circle([13.3, 120.3],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208688/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
+ L.circle([13.3, 120.3],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208717/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
 var point_30_7 = new L.LatLng(13.3, 120.3);
 
- L.circle([13.3, 119.6],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208689/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
+ L.circle([13.3, 119.6],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208718/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
 var point_30_8 = new L.LatLng(13.3, 119.6);
 
- L.circle([13.5, 118.8],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208690/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
+ L.circle([13.5, 118.8],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208719/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
 var point_30_9 = new L.LatLng(13.5, 118.8);
 
- L.circle([13.5, 118.5],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208691/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
+ L.circle([13.5, 118.5],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208720/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
 var point_30_10 = new L.LatLng(13.5, 118.5);
 
- L.circle([13.6, 117.5],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208692/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
+ L.circle([13.6, 117.5],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208721/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
 var point_30_11 = new L.LatLng(13.6, 117.5);
 
- L.circle([13.7, 116.7],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208693/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
+ L.circle([13.7, 116.7],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208722/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
 var point_30_12 = new L.LatLng(13.7, 116.7);
 
- L.circle([13.7, 116],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208694/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
+ L.circle([13.7, 116],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208723/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
 var point_30_13 = new L.LatLng(13.7, 116);
 
- L.circle([13.7, 115.5],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208695/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
+ L.circle([13.7, 115.5],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208724/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
 var point_30_14 = new L.LatLng(13.7, 115.5);
 
- L.circle([13.5, 114.8],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208696/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
+ L.circle([13.5, 114.8],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208725/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
 var point_30_15 = new L.LatLng(13.5, 114.8);
 
- L.circle([13.4, 113.8],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208697/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
+ L.circle([13.4, 113.8],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208726/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
 var point_30_16 = new L.LatLng(13.4, 113.8);
 
- L.circle([13.5, 113.3],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208698/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
+ L.circle([13.5, 113.3],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208727/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
 var point_30_17 = new L.LatLng(13.5, 113.3);
 
- L.circle([13.6, 112.8],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208699/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
+ L.circle([13.6, 112.8],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208728/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
 var point_30_18 = new L.LatLng(13.6, 112.8);
 
- L.circle([13.7, 112.1],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208700/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
+ L.circle([13.7, 112.1],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208729/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
 var point_30_19 = new L.LatLng(13.7, 112.1);
 
- L.circle([13.8, 111.8],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208701/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
+ L.circle([13.8, 111.8],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208730/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
 var point_30_20 = new L.LatLng(13.8, 111.8);
 
- L.circle([14.1, 111.1],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208702/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
+ L.circle([14.1, 111.1],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208731/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
 var point_30_21 = new L.LatLng(14.1, 111.1);
 
- L.circle([14.4, 110.5],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208703/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
+ L.circle([14.4, 110.5],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208732/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
 var point_30_22 = new L.LatLng(14.4, 110.5);
 
- L.circle([14.8, 109.8],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208704/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
+ L.circle([14.8, 109.8],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208733/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
 var point_30_23 = new L.LatLng(14.8, 109.8);
 
- L.circle([14.9, 109.3],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208705/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
-var point_30_24 = new L.LatLng(14.9, 109.3);
+ L.circle([14.9, 109.2],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208734/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
+var point_30_24 = new L.LatLng(14.9, 109.2);
 
- L.circle([14.9, 109.3],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208706/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
-var point_30_25 = new L.LatLng(14.9, 109.3);
+ L.circle([14.9, 109.2],7000,{color: 'black',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208735/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
+var point_30_25 = new L.LatLng(14.9, 109.2);
 
  var pointList_30_0 = [point_30_0, point_30_1];
 
@@ -420,21 +415,21 @@ var point_30_25 = new L.LatLng(14.9, 109.3);
 
  var firstpolyline_30_24 = new L.Polyline(pointList_30_24, {color: 'black', weight: 2, opacity: 0.5,smoothFactor: 2});firstpolyline_30_24.addTo(map);
     
- L.circle([14.9, 109.3],50000,{color: '#FF0000',fillOpacity: 0.5}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208707/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
+ L.circle([14.9, 109.2],50000,{color: '#FF0000',fillOpacity: 0.5}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208736/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
 
- L.circle([14.9, 109.3],250000,{color: '#FFFF00',fillColor: '#F9CC76', fillOpacity: 0.5}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208707/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
+ L.circle([14.9, 109.2],250000,{color: '#FFFF00',fillColor: '#F9CC76', fillOpacity: 0.5}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208736/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
 
- var point_30_0 = new L.LatLng(14.9, 109.3);
+ var point_30_0 = new L.LatLng(14.9, 109.2);
 
- L.circle([15.1, 106.8],7000,{color: '#FF0000',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208708/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
+ L.circle([15.1, 106.8],7000,{color: '#FF0000',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208737/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
 
- L.circle([15.1, 106.8],90000,{color: 'white',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208708/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
+ L.circle([15.1, 106.8],90000,{color: 'white',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208737/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
 
  var point_30_1 = new L.LatLng(15.1, 106.8);
 
- L.circle([15.3, 104.3],7000,{color: '#FF0000',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208709/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
+ L.circle([15.3, 104.3],7000,{color: '#FF0000',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208738/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
 
- L.circle([15.3, 104.3],150000,{color: 'white',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208709/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
+ L.circle([15.3, 104.3],150000,{color: 'white',fillOpacity: 0}).addTo(map).bindPopup("<table width='100%' border='0' cellspacing='1'><tr><td><iframe width='450' height='250' frameborder='0' src='https://thoitietvietnam.gov.vn/Kttv/vi-VN/208738/storminfor.html'></iframe></td></tr></table>", { maxWidth: 560 });
 
  var point_30_2 = new L.LatLng(15.3, 104.3);
 var pointList_30_0 = [point_30_0, point_30_1];
@@ -447,7 +442,7 @@ var firstpolyline_30_1 = new L.Polyline(pointList_30_1, {color: 'white', weight:
     function localData(text, callResponse) {
         //here can use custom criteria or merge data from multiple layer
         callResponse(data);
-        return {    //called to stop previous requests on map move
+        return {	//called to stop previous requests on map move
             abort: function () {
                 console.log('aborted request:' + text);
             }
@@ -471,4 +466,5 @@ var firstpolyline_30_1 = new L.Polyline(pointList_30_1, {color: 'white', weight:
             $('.tab').css('min-height', $($(this).attr('data-target')).innerHeight() + $('.header-container').innerHeight());
         });
     });
+
 </script>
