@@ -1,3 +1,8 @@
+---
+title: ACTCMS Vietnam
+subtitle: ACTCMS is an IT company, We provide our clients with unique solutions of any level of complexity.
+layout: layouts/app.njk
+---
 <script>
     $(document).ready(function () {
         if (window.matchMedia("(max-width: 767px)").matches) {
