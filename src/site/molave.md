@@ -471,5 +471,4 @@ var firstpolyline_30_1 = new L.Polyline(pointList_30_1, {color: 'white', weight:
             $('.tab').css('min-height', $($(this).attr('data-target')).innerHeight() + $('.header-container').innerHeight());
         });
     });
-
 </script>
