@@ -1,3 +1,8 @@
+---
+title: ACTCMS Vietnam
+subtitle: ACTCMS is an IT company, We provide our clients with unique solutions of any level of complexity.
+layout: layouts/app.njk
+---
 <article class="row-block-top" id='tabmap'>
     <div class='tab container-fluid' style="min-height: 789px; overflow: hidden;">
         <div class='container header-container'>
