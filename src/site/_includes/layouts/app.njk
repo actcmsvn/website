@@ -55,7 +55,15 @@
         <div class="uk-width-expand@m uk-width-1-1@s">
           <aside class="block-2">
 <script src="https://thoitietvietnam.gov.vn/Kttv//data/leaflet-searchvn.js"></script>
-          {{ content | safe }}
+
+{% include "header.njk" %}
+{{ content | safe }}
+{% include "footer.njk" %}
+{% set js %}
+  {% include "js/theme.js" %}
+{% endset %}
+<script>{{ js | jsmin | safe }}</script>
+
           </aside>
       </div>
     </div>
