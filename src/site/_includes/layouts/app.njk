@@ -479,16 +479,9 @@
                                     </div>
                                     <div id="logo-wrapper" class="top-border left-border right-border">
                                         <a id="logo" target="_top" class="clickable noselect notap" data-do="title">
-                                            <div class="w-sprite"></div><img class="text" alt="kttvqg.gov.vn" width="70px" src="images/logo.svg">
+                                            <div class="w-sprite"></div><img class="text" alt="ACTCMS" width="70px" src="https://actcms.work/images/logo.svg">
                                         </a></div>
-                                </article>
-{{ content | safe }}
-{% include "footer2.njk" %}
-{% set js %}
-  {% include "js/jquery.js" %}
-{% endset %}
-<script>{{ js | jsmin | safe }}</script>
-                              
+                                </article>                              
                                 <section class="row-wrp">
                                     <div class="wt-city uk-position-relative uk-box-shadow-small">
                                         <h2>THỜI TIẾT CÁC TỈNH / THÀNH - CẬP NHẬT LÚC 13h - 29/10/2020</h2>
@@ -760,6 +753,12 @@
                     <div uk-grid="">
                     </div>
                 </section>
+                {{ content | safe }}
+                {% include "footer2.njk" %}
+                {% set js %}
+                  {% include "js/jquery.js" %}
+                {% endset %}
+                <script>{{ js | jsmin | safe }}</script>
             </div>
         </div>
     </form>
