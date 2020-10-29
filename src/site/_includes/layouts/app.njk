@@ -2,1335 +2,767 @@
 <html lang="en">
   <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
-    <meta http-equiv="Content-Style-Type" content="text/css" />
     <title>
-        Trung tâm Dự báo - {{ title }}
+        {{ title }}
     </title>
-    <meta name="description" content="Web site thông tin  dự báo thời tiết biển, đất liền 24h,48h,72h, sản phẩm mô hình, ảnh Radar, ảnh vệ tinh." />
-    <meta name="keywords" content="dự báo thời tiết biển,đất liền,24h,48h,72h, sản phẩm mô hình, ảnh radar, ảnh vệ tinh, GSM,ETA,HRM,GFS,GEM,bản tin thủy văn, hạn ngắn,hạn vừa,hạn dài,thông báo lũ." />
-    <meta name="author" content="" />
-    <meta name="robots" content="INDEX,FOLLOW" />
-    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <meta name="Keywords" />
+    <meta name="Description" />
     <meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" name="viewport" />
-    <meta property="og:site_name" content="World Meteorological Organization" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://public.wmo.int/en" />
-    <meta property="og:title" content="World Meteorological Organization" />
     <!--Bật Responsive-->
-    <link rel="stylesheet" type="text/css" href="https://thoitietvietnam.gov.vn/kttv/css/uikit.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://thoitietvietnam.gov.vn/kttv/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="https://thoitietvietnam.gov.vn/kttv/css/responsive.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.khituongvietnam.gov.vn/bccp/css/uikit.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.khituongvietnam.gov.vn/bccp/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.khituongvietnam.gov.vn/bccp/css/responsive.css" />
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
-    <link rel="icon" href="https://thoitietvietnam.gov.vn/kttv/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="https://www.khituongvietnam.gov.vn/favicon.ico" type="image/x-icon" />
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-    <script type="text/javascript" src="https://thoitietvietnam.gov.vn/kttv/js/jquery.min.js"></script>
-    <script type="text/javascript" src="https://thoitietvietnam.gov.vn/kttv/js/uikit.min.js"></script>
-    <script type="text/javascript" src="https://thoitietvietnam.gov.vn/kttv/js/uikit-icons.min.js"></script>
-    <script type="text/javascript" src="https://thoitietvietnam.gov.vn/kttv/js/Paging.js"></script>
+    <script type="text/javascript" src="https://www.khituongvietnam.gov.vn/bccp/js/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.khituongvietnam.gov.vn/bccp/js/uikit.min.js"></script>
+    <script type="text/javascript" src="https://www.khituongvietnam.gov.vn/bccp/js/uikit-icons.min.js"></script>
+    <script type="text/javascript" src="https://www.khituongvietnam.gov.vn/bccp/js/Paging.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
-    <script src="https://thoitietvietnam.gov.vn/kttv/js/modernizr-2.6.2.js"></script>
+    <script src="https://www.khituongvietnam.gov.vn/bccp/js/modernizr-2.6.2.js"></script>
 </head>
+
 <body>
-<form method="post" action="./index.html?cul=vi-VN&amp;tabid=1" id="form1">
-<div class="aspNetHidden">
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
-</div>
-<div class="aspNetHidden">
-<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="B6B8B398" />
-</div>
-<script src="https://thoitietvietnam.gov.vn/Kttv//data/leaflet-searchvn.js"></script>
-<style>
-    .leaflet-container .leaflet-control-search {
-        position:relative;
-        float:left;
-        background:#fff;
-        color:#1978cf;
-        border: 2px solid rgba(0,0,0,0.2);
-        background-clip: padding-box;
-        -moz-border-radius: 4px;
-        -webkit-border-radius: 4px;
-        border-radius: 4px;
-        background-color: rgba(255, 255, 255, 0.8);
-        z-index:1000;   
-        margin-left: 10px;
-        margin-top: 10px;
-    }
-    .leaflet-control-search.search-exp {/*expanded*/
-        background: #fff;
-        border: 2px solid rgba(0,0,0,0.2);
-        background-clip: padding-box;   
-    }
-    .leaflet-control-search .search-input {
-        display:block;
-        float:left;
-        background: #fff;
-        border:1px solid #666;
-        border-radius:2px;
-        height:22px;
-        padding:0 20px 0 2px;
-        margin:4px 0 4px 4px;
-    }
-    .leaflet-control-search.search-load .search-input {
-        background: url('/upload/loader.gif') no-repeat center right #fff;
-    }
-    .leaflet-control-search.search-load .search-cancel {
-        visibility:hidden;
-    }
-    .leaflet-control-search .search-cancel {
-        display:block;
-        width:22px;
-        height:22px;
-        position:absolute;
-        right:28px;
-        margin:6px 0;
-        background: url('/upload/search-icon.png') no-repeat 0 -46px;
-        text-decoration:none;
-        filter: alpha(opacity=80);
-        opacity: 0.8;       
-    }
-    .leaflet-control-search .search-cancel:hover {
-        filter: alpha(opacity=100);
-        opacity: 1;
-    }
-    .leaflet-control-search .search-cancel span {
-        display:none;/* comment for cancel button imageless */
-        font-size:18px;
-        line-height:20px;
-        color:#ccc;
-        font-weight:bold;
-    }
-    .leaflet-control-search .search-cancel:hover span {
-        color:#aaa;
-    }
-    .leaflet-control-search .search-button {
-        display:block;
-        float:left;
-        width:30px;
-        height:30px;    
-        background: url('/upload/search-icon.png') no-repeat 4px 4px #fff;
-        border-radius:4px;
-    }
-    .leaflet-control-search .search-button:hover {
-        background: url('/upload/search-icon.png') no-repeat 4px -20px #fafafa;
-    }
-    .leaflet-control-search .search-tooltip {
-        position:absolute;
-        top:100%;
-        left:0;
-        float:left;
-        list-style: none;
-        padding-left: 0;
-        min-width:120px;
-        max-height:122px;
-        box-shadow: 1px 1px 6px rgba(0,0,0,0.4);
-        background-color: rgba(0, 0, 0, 0.25);
-        z-index:1010;
-        overflow-y:auto;
-        overflow-x:hidden;
-        cursor: pointer;
-        margin-top: 2px;
-    }
-    .leaflet-control-search .search-tip {
-        margin:2px;
-        padding:2px 4px;
-        display:block;
-        /*color:black;*/
-        background: #eee;
-        border-radius:.25em;
-        text-decoration:none;   
-        white-space:nowrap;
-        vertical-align:center;
-    }
-    .leaflet-control-search .search-button:hover {
-        background-color: #f4f4f4;
-    }
-    .leaflet-control-search .search-tip-select,
-    .leaflet-control-search .search-tip:hover {
-        background-color: #fff;
-    }
-    .leaflet-control-search .search-alert {
-        cursor:pointer;
-        clear:both;
-        font-size:.75em;
-        margin-bottom:5px;
-        padding:0 .25em;
-        color:#e00;
-        font-weight:bold;
-        border-radius:.25em;
-    }
-    .leaflet-popup-content 
-    {
-        height:auto;
-    }
-        .tab-list .selected {
-        background: #e7ab3c;
-        color: #fff;
-    }
-    .tab-list {
-        display: inline-block;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-    .tab-header {
-        display: inline-block;
-        font-size: 18px;
-        text-transform: uppercase;
-        cursor: pointer;
-        transition: .3s all;
-        position: relative;
-        overflow: hidden;
-    }
-    @media (max-width: 600px) {
-        .tab-header {
-            display: inline-block;
-            font-size: 10px;
-            width: 25%;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: .3s all;
-            position: relative;
-            overflow: hidden;
-        }
+    <form method="post" action="./" id="form1">
+        <div class="aspNetHidden">
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTg3OTU5NTgyNWRkBFI0BKlKsja6sjGXiM616Xk4WvYvCanzhsJ+TjThlos=" />
+        </div>
+        <div class="aspNetHidden">
+            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="F07C7167" />
+        </div>
+        <div id="wrapper">
+            <div class="uk-container uk-position-relative">
+                <section class="row-wrp">
+                    <div uk-grid="">
+                    </div>
+                </section>
+                <section class="row-wrp">
+                    <div uk-grid="">
+                        <div class="uk-width-expand@m uk-width-1-1@s">
+                            <aside class="block-2">
+                                <script src="https://khituongvietnam.gov.vn/bccp/data/leaflet-searchvn.js"></script>
+                                <style>
+                                .leaflet-container .leaflet-control-search {
+                                    position: relative;
+                                    float: left;
+                                    background: #fff;
+                                    color: #1978cf;
+                                    border: 2px solid rgba(0, 0, 0, 0.2);
+                                    background-clip: padding-box;
+                                    -moz-border-radius: 4px;
+                                    -webkit-border-radius: 4px;
+                                    border-radius: 4px;
+                                    background-color: rgba(255, 255, 255, 0.8);
+                                    z-index: 1000;
+                                    margin-left: 10px;
+                                    margin-top: 10px;
+                                }
 
-        .tab-list {
-            display: inline-block;
-            list-style: none;
-            text-align: right;
-            padding: 0;
-            margin: 0;
-        }
-    }
-    .tab-header:after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 100%;
-        left: 0;
-        background: firebrick;
-        z-index: -1;
-        border-left: .3px solid gray;
-        border-right: .3px solid gray;
-        transition: .2s all;
-    }
-    .selected {
-        background: gray;
-        color: white;
-    }
-    .selected:before {
-        content: '';
-        width: 65%;
-        left: 17.5%;
-        position: absolute;
-        height: 87%;
-        top: 0;
-        z-index: -1;
-        border-bottom: .3px solid brown;
-    }
-    .tab-header:hover {
-        letter-spacing: 2px;
-        color: white;
-    }
-    .tab-header:hover:after {
-        top: 0;
-    }
-    .content-container {
-        position: relative;
-    }
-    .tab-content {
-        position: absolute;
-        top: 0;
-        right: 100vw;
-        width: 100%;
-        transition: .3s all;
-    }
-</style>
-<div id="wrapper">
-  <div class="uk-container uk-position-relative">
-      <section class="row-wrp">
-          <div uk-grid="" class="uk-grid">
-              <div class="uk-width-expand@m uk-width-1-1@s uk-first-column">
-                  <aside class="block-2">
-                      <article class="row-block-top" id='tabmap'>
-                          <div class='tab container-fluid' style="min-height: 789px; overflow: hidden;">
-                              <div class='container header-container'>
-                                  <ul class='tab-list button-map-weather '>
-                                      <li class='tab-header px-3 py-2 my-2 selected' data-target='.tab1'>Thời tiết các điểm</li>
-                                      <li class='tab-header px-3 py-2 my-2' data-target='.tab2'>Mực nước các điểm</li>
-                                      <li class='tab-header px-3 py-2 my-2' data-target='.tab3'>Dự báo điểm hải văn </li>
-                                      <li class='tab-header px-3 py-2 my-2' data-target='.tab4'>Bản đồ phân tích thời tiết</li>
-                                  </ul>
-                              </div>
-                              <div class='content-container'>
-                                  <div class='tab-content tab1'>
-                                      <div class='container'>
-                                          <div id="mapid" style="width: 850px; height: 750px;"></div>
-                                      </div>
-                                  </div>
-                                  <div class='tab-content tab2'>
-                                      <div class='container'>
-                                          <div id="mapidHydro" style="width: 850px; height: 750px;"></div>
-                                      </div>
-                                  </div>
-                                  <div class='tab-content tab3'>
-                                      <div class='container'>
-                                          <div id="mapidMarine" style="width: 850px; height: 750px;"></div>
-                                      </div>
-                                  </div>
-                                  <div class='tab-content tab4'>
-                                      <div class='container'>
-                                          <div class="uk-position-relative" uk-slider="autoplay: true;autoplay-interval: 1000;">
-                                              <ul class="uk-slider-items">
-                                                  <li>
-                                                      <img src="https://thoitietvietnam.gov.vn//Upload/SynopImage/2020/10/27/UA-MD-00.png" alt="" style="width: 850px; height: 750px;"><!-- Phần hiển thị ảnh 1-->
-                                                  </li>
-                                                  <li>
-                                                      <img src="https://thoitietvietnam.gov.vn//Upload/SynopImage/2020/10/27/UA-850-00.png" alt="" style="width: 850px; height: 750px;"><!-- Phần hiển thị ảnh 1-->
-                                                  </li>
-                                                  <li>
-                                                      <img src="https://thoitietvietnam.gov.vn//Upload/SynopImage/2020/10/27/UA-700-00.png" alt="" style="width: 850px; height: 750px;"><!-- Phần hiển thị ảnh 1-->
-                                                  </li>
-                                                  <li>
-                                                      <img src="https://thoitietvietnam.gov.vn//Upload/SynopImage/2020/10/27/UA-500-00.png" alt="" style="width: 850px; height: 750px;"><!-- Phần hiển thị ảnh 1-->
-                                                  </li>
-                                              </ul>
-                                              <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
-                                              <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </article>
-                  </aside>
-              </div>
-          </div>
-      </section>
-      <section class="row-wrp">
-          <div class="wt-city uk-position-relative uk-box-shadow-small">
-              <h2>THỜI TIẾT CÁC TỈNH / THÀNH - CẬP NHẬT LÚC 10h - 28/10/2020</h2>
-              <div uk-slider="sets: true" class="ct-wt-city uk-slider uk-slider-container">
-                  <ul class="uk-slider-items uk-child-width-auto@m uk-child-width-1-2@s uk-child-width-1-2 uk-grid" uk-grid="" style="transform: translateX(0px);">
-                      <li class="uk-first-column uk-active"><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/lai-chau-w64.html">Lai Châu</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/340.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">24°C</div>
-                      </li>
-                      <li class="uk-active"><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/dien-bien-w38.html">Điện Biên</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">21°C</div>
-                      </li>
-                      <li class="uk-active"><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/son-la-w45.html">Sơn La</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/300.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">23°C</div>
-                      </li>
-                      <li class="uk-active"><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/hoa-binh-w2.html">Hòa Bình</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/300.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">28°C</div>
-                      </li>
-                      <li class="uk-active"><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/lao-cai-w37.html">Lào Cai</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">25°C</div>
-                      </li>
-                      <li class="uk-active"><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/yen-bai-w53.html">Yên Bái</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">22°C</div>
-                      </li>
-                      <li class="uk-active"><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/ha-giang-w36.html">Hà Giang</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/340.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">28°C</div>
-                      </li>
-                      <li class="uk-active"><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/tuyen-quang-w50.html">Tuyên Quang</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">26°C</div>
-                      </li>
-                      <li class="uk-active"><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/bac-can-w52.html">Bắc cạn</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">21°C</div>
-                      </li>
-                      <li class=""><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/thai-nguyen-w51.html">Thái Nguyên</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/300.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">23°C</div>
-                      </li>
-                      <li class=""><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/phu-tho-w43.html">Phú Thọ</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/300.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">24°C</div>
-                      </li>
-                      <li class=""><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/vinh-phuc-w44.html">Vĩnh Phúc</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">24°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/cao-bang-w49.html">Cao Bằng</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">25°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/lang-son-w48.html">Lạng Sơn</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">24°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/quang-ninh-w63.html">Quảng Ninh</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">27°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/bac-giang-w46.html">Bắc Giang</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/340.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">28°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/bac-ninh-w47.html">Bắc Ninh</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">24°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/hai-phong-w54.html">Hải Phòng</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">27°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/tp-ha-noi-w28.html">TP. Hà Nội</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/icon_resized/4001.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">28.3°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/hai-duong-w19.html">Hải Dương</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">24°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/hung-yen-w33.html">Hưng Yên</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/300.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">24°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/nam-dinh-w34.html">Nam Định</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">27°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/phu-ly-w20.html">Phủ Lý</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">24°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/ninh-binh-w17.html">Ninh Bình</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">25°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/thai-binh-w18.html">Thái Bình</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">24°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/thanh-hoa-w61.html">Thanh Hóa</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">27°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/nghe-an-w3.html">Nghệ An</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">26°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/ha-tinh-w4.html">Hà Tĩnh</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/111.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">25°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/quang-binh-w5.html">Quảng Bình</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/111.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">24°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/quang-tri-w6.html">Quảng Trị</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/111.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">23°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/hue-w7.html">Huế</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/111.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">24°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/da-nang-w55.html">Đà nẵng</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/111.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">25°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/quang-nam-w62.html">Quảng Nam</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/111.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">25°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/quang-ngai-w8.html">Quảng Ngãi</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/111.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">25°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/binh-dinh-w56.html">Bình Định</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/111.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">25°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/phu-yen-w59.html">Phú Yên</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/111.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">25°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/khanh-hoa-w9.html">Khánh Hòa</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">26°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/ninh-thuan-w60.html">Ninh Thuận</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">28°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/phan-thiet-w10.html">Phan Thiết</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">27°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/kon-tum-w11.html">Kon Tum</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/111.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">21°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/pleiku-w12.html">Pleiku</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/111.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">19°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/dak-lak-w13.html">Dak Lak</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/111.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">22°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/dak-nong-w39.html">Đắk Nông</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/111.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">22°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/da-lat-w14.html">Đà Lạt</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/111.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">17°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/binh-phuoc-w30.html">Bình Phước</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">24°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/tay-ninh-w35.html">Tây Ninh</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">25°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/dong-nai-w32.html">Đồng Nai</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">26°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/binh-duong-w16.html">Bình Dương</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">25°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/tp-ho-chi-minh-w15.html">TP. Hồ Chí Minh</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">28°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/vung-tau-w31.html">Vũng Tàu</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">29°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/long-an-w21.html">Long An</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">27°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/tien-giang-w23.html">Tiền Giang</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">27°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/vinh-long-w57.html">Vĩnh Long</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">27°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/ben-tre-w24.html">Bến tre</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">27°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/dong-thap-w22.html">Đồng Tháp</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">26°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/tra-vinh-w25.html">Trà Vinh</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">26°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/an-giang-w58.html">An Giang</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">27°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/can-tho-w26.html">Cần Thơ</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">30°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/hau-giang-w40.html">Hậu Giang</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">28°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/soc-trang-w27.html">Sóc Trăng</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">27°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/kien-giang-w41.html">Kiên Giang</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">30°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/bac-lieu-w29.html">Bạc Liêu</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">27°C</div>
-                      </li>
-                      <li><a class="name-wt-city" href="https://thoitietvietnam.gov.vn/Kttv/vi-VN/1/ca-mau-w42.html">Cà Mau</a>
-                          <div class="icon-wt-city"><img src="https://thoitietvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/110.gif" style="width: 45px; height: 45px;"></div>
-                          <div class="temp-wt-city">26°C</div>
-                      </li>
-                  </ul>
-                  <a class="uk-position-top-left uk-position-small uk-hidden-hover uk-slidenav-previous uk-icon uk-slidenav" href="#" uk-slidenav-previous="" uk-slider-item="previous"><svg width="14" height="24" viewBox="0 0 14 24" xmlns="http://www.w3.org/2000/svg" data-svg="slidenav-previous">
-                          <polyline fill="none" stroke="#000" stroke-width="1.4" points="12.775,1 1.225,12 12.775,23 "></polyline>
-                      </svg></a>
-                  <a class="uk-position-top-right uk-position-small uk-hidden-hover uk-slidenav-next uk-icon uk-slidenav" href="#" uk-slidenav-next="" uk-slider-item="next"><svg width="14" height="24" viewBox="0 0 14 24" xmlns="http://www.w3.org/2000/svg" data-svg="slidenav-next">
-                          <polyline fill="none" stroke="#000" stroke-width="1.4" points="1.225,23 12.775,12 1.225,1 "></polyline>
-                      </svg></a>
-              </div>
-          </div>
-      </section>
-  </div>
-</div>
+                                .leaflet-control-search.search-exp {
+                                    /*expanded*/
+                                    background: #fff;
+                                    border: 2px solid rgba(0, 0, 0, 0.2);
+                                    background-clip: padding-box;
+                                }
 
+                                .leaflet-control-search .search-input {
+                                    display: block;
+                                    float: left;
+                                    background: #fff;
+                                    border: 1px solid #666;
+                                    border-radius: 2px;
+                                    height: 22px;
+                                    padding: 0 20px 0 2px;
+                                    margin: 4px 0 4px 4px;
+                                }
+
+                                .leaflet-control-search.search-load .search-input {
+                                    background: url('https://khituongvietnam.gov.vn/upload/loader.gif') no-repeat center right #fff;
+                                }
+
+                                .leaflet-control-search.search-load .search-cancel {
+                                    visibility: hidden;
+                                }
+
+                                .leaflet-control-search .search-cancel {
+                                    display: block;
+                                    width: 22px;
+                                    height: 22px;
+                                    position: absolute;
+                                    right: 28px;
+                                    margin: 6px 0;
+                                    background: url('https://khituongvietnam.gov.vn/upload/search-icon.png') no-repeat 0 -46px;
+                                    text-decoration: none;
+                                    filter: alpha(opacity=80);
+                                    opacity: 0.8;
+                                }
+
+                                .leaflet-control-search .search-cancel:hover {
+                                    filter: alpha(opacity=100);
+                                    opacity: 1;
+                                }
+
+                                .leaflet-control-search .search-cancel span {
+                                    display: none;
+                                    /* comment for cancel button imageless */
+                                    font-size: 18px;
+                                    line-height: 20px;
+                                    color: #ccc;
+                                    font-weight: bold;
+                                }
+
+                                .leaflet-control-search .search-cancel:hover span {
+                                    color: #aaa;
+                                }
+
+                                .leaflet-control-search .search-button {
+                                    display: block;
+                                    float: left;
+                                    width: 30px;
+                                    height: 30px;
+                                    background: url('https://khituongvietnam.gov.vn/upload/search-icon.png') no-repeat 4px 4px #fff;
+                                    border-radius: 4px;
+                                }
+
+                                .leaflet-control-search .search-button:hover {
+                                    background: url('https://khituongvietnam.gov.vn/upload/search-icon.png') no-repeat 4px -20px #fafafa;
+                                }
+
+                                .leaflet-control-search .search-tooltip {
+                                    position: absolute;
+                                    top: 100%;
+                                    left: 0;
+                                    float: left;
+                                    list-style: none;
+                                    padding-left: 0;
+                                    min-width: 120px;
+                                    max-height: 122px;
+                                    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+                                    background-color: rgba(0, 0, 0, 0.25);
+                                    z-index: 1010;
+                                    overflow-y: auto;
+                                    overflow-x: hidden;
+                                    cursor: pointer;
+                                    margin-top: 2px;
+                                }
+
+                                .leaflet-control-search .search-tip {
+                                    margin: 2px;
+                                    padding: 2px 4px;
+                                    display: block;
+                                    /*color:black;*/
+                                    background: #eee;
+                                    border-radius: .25em;
+                                    text-decoration: none;
+                                    white-space: nowrap;
+                                    vertical-align: center;
+                                }
+
+                                .leaflet-control-search .search-button:hover {
+                                    background-color: #f4f4f4;
+                                }
+
+                                .leaflet-control-search .search-tip-select,
+                                .leaflet-control-search .search-tip:hover {
+                                    background-color: #fff;
+                                }
+
+                                .leaflet-control-search .search-alert {
+                                    cursor: pointer;
+                                    clear: both;
+                                    font-size: .75em;
+                                    margin-bottom: 5px;
+                                    padding: 0 .25em;
+                                    color: #e00;
+                                    font-weight: bold;
+                                    border-radius: .25em;
+                                }
+
+
+                                .leaflet-popup-content {
+                                    height: auto;
+                                }
+
+                                .tab-list .selected {
+                                    background: #e7ab3c;
+                                    color: #fff;
+                                }
+
+                                .tab-list {
+                                    display: inline-block;
+                                    list-style: none;
+                                    padding: 0;
+                                    margin: 0;
+                                }
+
+                                .tab-header {
+                                    display: inline-block;
+                                    font-size: 18px;
+                                    text-transform: uppercase;
+                                    cursor: pointer;
+                                    transition: .3s all;
+                                    position: relative;
+                                    overflow: hidden;
+                                }
+
+                                @media (max-width: 600px) {
+                                    .tab-header {
+                                        display: inline-block;
+                                        font-size: 10px;
+                                        width: 25%;
+                                        text-transform: uppercase;
+                                        cursor: pointer;
+                                        transition: .3s all;
+                                        position: relative;
+                                        overflow: hidden;
+                                    }
+
+                                    .tab-list {
+                                        display: inline-block;
+                                        list-style: none;
+                                        text-align: right;
+                                        padding: 0;
+                                        margin: 0;
+                                    }
+                                }
+
+                                .tab-header:after {
+                                    content: '';
+                                    position: absolute;
+                                    width: 100%;
+                                    height: 100%;
+                                    top: 100%;
+                                    left: 0;
+                                    background: firebrick;
+                                    z-index: -1;
+                                    border-left: .3px solid gray;
+                                    border-right: .3px solid gray;
+                                    transition: .2s all;
+                                }
+
+                                .selected {
+                                    background: gray;
+                                    color: white;
+                                }
+
+                                .selected:before {
+                                    content: '';
+                                    width: 65%;
+                                    left: 17.5%;
+                                    position: absolute;
+                                    height: 87%;
+                                    top: 0;
+                                    z-index: -1;
+                                    border-bottom: .3px solid brown;
+                                }
+
+                                .tab-header:hover {
+                                    letter-spacing: 2px;
+                                    color: white;
+                                }
+
+                                .tab-header:hover:after {
+                                    top: 0;
+                                }
+
+                                .content-container {
+                                    position: relative;
+                                }
+
+                                .tab-content {
+                                    position: absolute;
+                                    top: 0;
+                                    right: 100vw;
+                                    width: 100%;
+                                    transition: .3s all;
+                                }
+
+                                .tag {
+                                    float: right;
+                                    position: absolute;
+                                    right: 0px;
+                                    top: 0px;
+                                    background-color: green;
+                                }
+
+                                .dvInsideTL {
+                                    position: absolute;
+                                    left: 0;
+                                    top: 0;
+                                    width: 150px;
+                                    height: 100px;
+                                    background-color: #ff751a;
+                                    opacity: 0.5;
+                                }
+
+                                #logo-wrapper {
+                                    pointer-events: none;
+                                    transition: all .7s;
+                                    -webkit-transition: all .7s
+                                }
+
+                                .top-border {
+                                    top: 0;
+                                }
+
+                                .right-border {
+                                    right: 0;
+                                }
+
+                                .left-border {
+                                    left: 0;
+                                }
+
+                                #logo {
+                                    position: absolute;
+                                    pointer-events: auto;
+                                    left: 50%;
+                                    margin-left: -70px;
+                                    top: 10px;
+                                }
+
+                                element.style {}
+
+                                #logo {
+                                    position: absolute;
+                                    pointer-events: auto;
+                                    left: 98%;
+                                    margin-left: -70px;
+                                    top: 55px;
+                                }
+
+                                .notap {
+                                    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                                }
+
+                                .noselect {
+                                    -webkit-touch-callout: none;
+                                    -webkit-user-select: none;
+                                    -moz-user-select: none;
+                                    -ms-user-select: none;
+                                    user-select: none;
+                                }
+
+                                .clickable {
+                                    cursor: pointer;
+                                }
+                                </style>
+                                <article class="row-block-top" id='tabmap'>
+                                    <div class='tab container-fluid' style="position: fixed; top: 0; bottom: 0; left: 0; right: 0; width: 100%;overflow: hidden;position: sticky;">
+                                        <div class='container header-container'>
+                                            <ul class='tab-list button-map-weather '>
+                                                <li class='tab-header px-3 py-2 my-2 selected' data-target='.tab1'>Thời tiết các điểm</li>
+                                                <li class='tab-header px-3 py-2 my-2' data-target='.tab2'>Tin cảnh báo thiên tai</li>
+                                                <li class='tab-header px-3 py-2 my-2' data-target='.tab3'>Tin khí hậu </li>
+                                            </ul>
+                                        </div>
+                                        <div class='content-container'>
+                                            <div class='tab-content tab1'>
+                                                <div class='container'>
+                                                    <div id="mapid" style="width: 100%; height: 750px;"></div>
+                                                </div>
+                                            </div>
+                                            <div class='tab-content tab2'>
+                                                <div class='container'>
+                                                    <article class="row-block">
+                                                        <div class="main-row-block">
+                                                            <div class="ct-news-nb-block uk-box-shadow-small uk-position-relative">
+                                                                <ul class="uk-list list-news uk-margin-remove-bottom">
+                                                                    <li class="act-thumb-news-nb"><a href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/tin-nhanh-canh-bao-lu-quet-sat-lo-dat-va-ngap-ung-cuc-bo-tai-tinh-nghe-an-post17887.html" alt="TIN NHANH CẢNH BÁO LŨ QUÉT, SẠT LỞ ĐẤT VÀ NGẬP ÚNG CỤC BỘ TẠI TỈNH NGHỆ AN">TIN NHANH CẢNH BÁO LŨ QUÉT, SẠT LỞ ĐẤT VÀ NGẬP ÚNG CỤC BỘ TẠI TỈNH NGHỆ AN<label>(29/10/2020 11:23:17)</label><img src="https://khituongvietnam.gov.vn/bccp/images/new.jpg" /></a>
+                                                                        <div class="thumb-news-nb"><img src="http://thoitietvietnam.gov.vn/upload/Article/thuyvan2/2020/10/26/luquet.jpg"></div>
+                                                                    </li>
+                                                                    <li><a href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/tin-lu-tren-cac-song-tu-nghe-an-den-quang-ngai-kon-tum-va-gia-lai-post17883.html" alt="TIN LŨ TRÊN CÁC SÔNG TỪ NGHỆ AN ĐẾN QUẢNG NGÃI, KON TUM VÀ GIA LAI">TIN LŨ TRÊN CÁC SÔNG TỪ NGHỆ AN ĐẾN QUẢNG NGÃI, KON TUM VÀ GIA LAI<label>(29/10/2020 09:54:00)</label><img src="https://khituongvietnam.gov.vn/bccp/images/new.jpg" /></a>
+                                                                        <div class="thumb-news-nb"><img src="http://thoitietvietnam.gov.vn/upload/Article/thuyvan2/2020/10/26/anh-lu.jpg"></div>
+                                                                    </li>
+                                                                    <li><a href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/tin-canh-bao-lu-quet-sat-lo-dat-va-ngap-ung-cuc-bo-cac-tinh-bac-bo-tu-thanh-hoa-den-binh-dinh-va-khu-vuc-tay-nguyen-post17882.html" alt="TIN CẢNH BÁO LŨ QUÉT, SẠT LỞ ĐẤT VÀ NGẬP ÚNG CỤC BỘ CÁC TỈNH BẮC BỘ, TỪ THANH HÓA ĐẾN BÌNH ĐỊNH VÀ KHU VỰC TÂY NGUYÊN">TIN CẢNH BÁO LŨ QUÉT, SẠT LỞ ĐẤT VÀ NGẬP ÚNG CỤC BỘ CÁC TỈNH BẮC BỘ, TỪ THANH HÓA ĐẾN BÌNH ĐỊNH VÀ KHU VỰC TÂY NGUYÊN<label>(29/10/2020 09:41:07)</label><img src="https://khituongvietnam.gov.vn/bccp/images/new.jpg" /></a>
+                                                                        <div class="thumb-news-nb"><img src="http://thoitietvietnam.gov.vn/upload/Article/thuyvan1/2020/6/14/665x432_lu-quet-1.jpg"></div>
+                                                                    </li>
+                                                                    <li><a href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/tin-canh-bao-mua-dong-gio-manh-va-song-lon-tren-bien-post17880.html" alt="TIN CẢNH BÁO MƯA DÔNG, GIÓ MẠNH VÀ SÓNG LỚN TRÊN BIỂN">TIN CẢNH BÁO MƯA DÔNG, GIÓ MẠNH VÀ SÓNG LỚN TRÊN BIỂN<label>(29/10/2020 09:30:00)</label><img src="https://khituongvietnam.gov.vn/bccp/images/new.jpg" /></a>
+                                                                        <div class="thumb-news-nb"><img src="http://thoitietvietnam.gov.vn/upload/Article/thoitiet/2020/10/23/179355-1516248036859.jpg"></div>
+                                                                    </li>
+                                                                    <li><a href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/tin-khong-khi-lanh-tang-cuong-va-mua-lon-o-cac-tinh-bac-va-trung-trung-bo-post17881.html" alt="TIN KHÔNG KHÍ LẠNH TĂNG CƯỜNG VÀ MƯA LỚN Ở CÁC TỈNH BẮC VÀ TRUNG TRUNG BỘ">TIN KHÔNG KHÍ LẠNH TĂNG CƯỜNG VÀ MƯA LỚN Ở CÁC TỈNH BẮC VÀ TRUNG TRUNG BỘ<label>(29/10/2020 09:30:00)</label><img src="https://khituongvietnam.gov.vn/bccp//images/new.jpg" /></a>
+                                                                        <div class="thumb-news-nb"><img src="http://thoitietvietnam.gov.vn/upload/Article/thoitiet/2020/10/29/06hrain030.gif"></div>
+                                                                    </li>
+                                                                    <li><a href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/tin-du-bao-thoi-tiet-khu-vuc-huyen-nam-tra-my-quang-nam-ngay-va-dem-29-thang-10-post17884.html" alt="TIN DỰ BÁO THỜI TIẾT KHU VỰC HUYỆN NAM TRÀ MY (QUẢNG NAM)  NGÀY VÀ ĐÊM 29 THÁNG 10">TIN DỰ BÁO THỜI TIẾT KHU VỰC HUYỆN NAM TRÀ MY (QUẢNG NAM) NGÀY VÀ ĐÊM 29 THÁNG 10<label>(29/10/2020 09:12:00)</label><img src="https://khituongvietnam.gov.vn/bccp/images/new.jpg" /></a>
+                                                                        <div class="thumb-news-nb"><img src="http://thoitietvietnam.gov.vn/upload/Article/thoitiet/2020/10/29/quang-nam.PNG"></div>
+                                                                    </li>
+                                                                    <li><a href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/thong-tin-canh-bao-chi-so-cuc-dai-buc-xa-tia-cuc-tim-va-tiem-nang-nhiet-post17879.html" alt="THÔNG TIN CẢNH BÁO CHỈ SỐ CỰC ĐẠI BỨC XẠ TIA CỰC TÍM VÀ TIỀM NĂNG NHIỆT">THÔNG TIN CẢNH BÁO CHỈ SỐ CỰC ĐẠI BỨC XẠ TIA CỰC TÍM VÀ TIỀM NĂNG NHIỆT<label>(29/10/2020 08:36:00)</label><img src="https://khituongvietnam.gov.vn/bccp/images/new.jpg" /></a>
+                                                                        <div class="thumb-news-nb"><img src="http://thoitietvietnam.gov.vn/upload/Article/sovientham/2020/10/26/thumbnail.png"></div>
+                                                                    </li>
+                                                                    <li><a href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/canh-bao-mua-tren-khu-vuc-noi-thanh-ha-noi-post17875.html" alt="CẢNH BÁO MƯA TRÊN KHU VỰC NỘI THÀNH HÀ NỘI">CẢNH BÁO MƯA TRÊN KHU VỰC NỘI THÀNH HÀ NỘI<label>(29/10/2020 07:15:00)</label><img src="https://khituongvietnam.gov.vn/bccp/images/new.jpg" /></a>
+                                                                        <div class="thumb-news-nb"><img src="http://thoitietvietnam.gov.vn/upload/Article/thoitiet/2020/10/15/3291735221412934858877088412765868190072832n-15266519875751930577323.jpg"></div>
+                                                                    </li>
+                                                                    <li><a href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/tin-cuoi-cung-ve-con-bao-so-9-post17867.html" alt="TIN CUỐI CÙNG VỀ CƠN BÃO SỐ 9">TIN CUỐI CÙNG VỀ CƠN BÃO SỐ 9<label>(28/10/2020 21:00:00)</label></a>
+                                                                        <div class="thumb-news-nb"><img src="http://thoitietvietnam.gov.vn/upload/Article/thoitiet/2020/10/28/dbqg_xtnd_20201028_2100.gif"></div>
+                                                                    </li>
+                                                                    <li><a href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/tin-nhanh-ve-bao-so-9-post17849.html" alt="TIN NHANH VỀ BÃO SỐ 9">TIN NHANH VỀ BÃO SỐ 9<label>(28/10/2020 13:15:00)</label></a>
+                                                                        <div class="thumb-news-nb"><img src="http://thoitietvietnam.gov.vn/upload/Article/thoitiet/2020/10/28/1315.PNG"></div>
+                                                                    </li>
+                                                                    <li><a href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/tin-canh-bao-song-bien-24-gio-toi-post17856.html" alt="TIN CẢNH BÁO SÓNG BIỂN 24 GIỜ TỚI">TIN CẢNH BÁO SÓNG BIỂN 24 GIỜ TỚI<label>(28/10/2020 11:27:17)</label></a>
+                                                                        <div class="thumb-news-nb"><img src="http://thoitietvietnam.gov.vn/upload/Article/haivan/2020/10/28/nchmf_maxdaily_2020-10-28_12.png"></div>
+                                                                    </li>
+                                                                    <li><a href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/tin-canh-bao-song-bien-24-gio-toi-post17844.html" alt="TIN CẢNH BÁO SÓNG BIỂN 24 GIỜ TỚI">TIN CẢNH BÁO SÓNG BIỂN 24 GIỜ TỚI<label>(28/10/2020 04:25:18)</label></a>
+                                                                        <div class="thumb-news-nb"><img src="http://thoitietvietnam.gov.vn/upload/Article/haivan/2020/10/27/nchmf_maxdaily_2020-10-28_12.png"></div>
+                                                                    </li>
+                                                                    <li><a href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/tin-du-bao-thoi-tiet-khu-vuc-phong-dien-thua-thien-hue-ngay-va-dem-27-thang-10-post17808.html" alt="TIN DỰ BÁO THỜI TIẾT KHU VỰC PHONG ĐIỀN (THỪA THIÊN HUẾ)  NGÀY VÀ ĐÊM 27 THÁNG 10">TIN DỰ BÁO THỜI TIẾT KHU VỰC PHONG ĐIỀN (THỪA THIÊN HUẾ) NGÀY VÀ ĐÊM 27 THÁNG 10<label>(27/10/2020 05:53:12)</label></a>
+                                                                        <div class="thumb-news-nb"><img src="http://thoitietvietnam.gov.vn/upload/Article/thoitiet/2020/10/21/phong-dien.PNG"></div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </article>
+                                                </div>
+                                            </div>
+                                            <div class='tab-content tab3'>
+                                                <div class='container'>
+                                                    <article class="row-block">
+                                                        <div class="main-row-block">
+                                                            <div class="ct-news-nb-block uk-box-shadow-small uk-position-relative">
+                                                                <ul class="uk-list list-news uk-margin-remove-bottom">
+                                                                    <li class="act-thumb-news-nb"><a href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/ban-tin-cap-nhat-ve-hien-tuong-enso-va-nhan-dinh-xu-the-khi-tuong-thuy-van-tu-thang-11-nam-2020-den-thang-4-nam-2021-postkh17484.html" alt="BẢN TIN CẬP NHẬT VỀ HIỆN TƯỢNG ENSO VÀ NHẬN ĐỊNH XU THẾ KHÍ TƯỢNG THỦY VĂN TỪ THÁNG 11 NĂM 2020 ĐẾN THÁNG 4 NĂM 2021">BẢN TIN CẬP NHẬT VỀ HIỆN TƯỢNG ENSO VÀ NHẬN ĐỊNH XU THẾ KHÍ TƯỢNG THỦY VĂN TỪ THÁNG 11 NĂM 2020 ĐẾN THÁNG 4 NĂM 2021<label>(16/10/2020)</label></a>
+                                                                        <div class="thumb-news-nb"><img src="http://thoitietvietnam.gov.vn/upload/Article/khihau/2020/10/16/z2128342693554_d7e4e79950d8f0d50286791a7953bf5e.jpg"></div>
+                                                                    </li>
+                                                                    <li><a href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/ban-tin-du-bao-canh-bao-han-khi-tuong-tai-cac-vung-tren-ca-nuoc-tu-ngay-15-10-09-11-2020-postkh17443.html" alt="BẢN TIN DỰ BÁO, CẢNH BÁO HẠN KHÍ TƯỢNG TẠI CÁC VÙNG TRÊN CẢ NƯỚC TỪ NGÀY 15/10-09/11/2020">BẢN TIN DỰ BÁO, CẢNH BÁO HẠN KHÍ TƯỢNG TẠI CÁC VÙNG TRÊN CẢ NƯỚC TỪ NGÀY 15/10-09/11/2020<label>(15/10/2020)</label></a>
+                                                                        <div class="thumb-news-nb"><img src="http://thoitietvietnam.gov.vn/upload/Article/khihau/2020/10/15/spi_obs.png"></div>
+                                                                    </li>
+                                                                    <li><a href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/nhan-dinh-xu-the-thoi-tiet-tu-ngay-11-thang-10-den-ngay-10-thang-11-nam-2020-cac-khu-vuc-tren-pham-vi-ca-nuoc-postkh17239.html" alt="NHẬN ĐỊNH XU THẾ THỜI TIẾT TỪ NGÀY 11 THÁNG 10 ĐẾN NGÀY 10 THÁNG 11 NĂM 2020 CÁC KHU VỰC TRÊN PHẠM VI CẢ NƯỚC">NHẬN ĐỊNH XU THẾ THỜI TIẾT TỪ NGÀY 11 THÁNG 10 ĐẾN NGÀY 10 THÁNG 11 NĂM 2020 CÁC KHU VỰC TRÊN PHẠM VI CẢ NƯỚC<label>(10/10/2020)</label></a>
+                                                                        <div class="thumb-news-nb"><img src="http://thoitietvietnam.gov.vn/upload/Article/khihau/2020/10/10/csr09.png"></div>
+                                                                    </li>
+                                                                    <li><a href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/nhan-dinh-xu-the-thoi-tiet-tu-ngay-01-den-ngay-31-thang-10-nam-2020-cac-khu-vuc-tren-pham-vi-ca-nuoc-postkh7047.html" alt="NHẬN ĐỊNH XU THẾ THỜI TIẾT TỪ NGÀY 01 ĐẾN NGÀY 31 THÁNG 10 NĂM 2020 CÁC KHU VỰC TRÊN PHẠM VI CẢ NƯỚC">NHẬN ĐỊNH XU THẾ THỜI TIẾT TỪ NGÀY 01 ĐẾN NGÀY 31 THÁNG 10 NĂM 2020 CÁC KHU VỰC TRÊN PHẠM VI CẢ NƯỚC<label>(01/10/2020)</label></a>
+                                                                        <div class="thumb-news-nb"><img src="http://thoitietvietnam.gov.vn/upload/Article/khihau/2020/10/1/rdb_202010.png"></div>
+                                                                    </li>
+                                                                    <li><a href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/ban-tin-du-bao-canh-bao-han-khi-tuong-tai-cac-vung-tren-ca-nuoc-tu-ngay-5-26-10-2020-postkh7046.html" alt="BẢN TIN DỰ BÁO, CẢNH BÁO HẠN KHÍ TƯỢNG TẠI CÁC VÙNG TRÊN CẢ NƯỚC TỪ NGÀY 5-26/10/2020">BẢN TIN DỰ BÁO, CẢNH BÁO HẠN KHÍ TƯỢNG TẠI CÁC VÙNG TRÊN CẢ NƯỚC TỪ NGÀY 5-26/10/2020<label>(01/10/2020)</label></a>
+                                                                        <div class="thumb-news-nb"><img src="http://thoitietvietnam.gov.vn/upload/Article/khihau/2020/10/1/spi1.png"></div>
+                                                                    </li>
+                                                                    <li><a href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/nhan-dinh-xu-the-thoi-tiet-tu-ngay-21-thang-9-den-ngay-20-thang-10-nam-2020-cac-khu-vuc-tren-pham-vi-ca-nuoc-postkh6840.html" alt="NHẬN ĐỊNH XU THẾ THỜI TIẾT TỪ NGÀY 21 THÁNG 9 ĐẾN NGÀY 20 THÁNG 10 NĂM 2020 CÁC KHU VỰC TRÊN PHẠM VI CẢ NƯỚC">NHẬN ĐỊNH XU THẾ THỜI TIẾT TỪ NGÀY 21 THÁNG 9 ĐẾN NGÀY 20 THÁNG 10 NĂM 2020 CÁC KHU VỰC TRÊN PHẠM VI CẢ NƯỚC<label>(21/09/2020)</label></a>
+                                                                        <div class="thumb-news-nb"><img src="http://thoitietvietnam.gov.vn/upload/Article/khihau/2020/9/21/csr-tong-3-tuan.png"></div>
+                                                                    </li>
+                                                                    <li><a href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/ban-tin-du-bao-canh-bao-han-khi-tuong-tai-cac-vung-tren-ca-nuoc-tu-ngay-15-9-12-10-2020-postkh6685.html" alt="BẢN TIN DỰ BÁO, CẢNH BÁO HẠN KHÍ TƯỢNG TẠI CÁC VÙNG TRÊN CẢ NƯỚC TỪ NGÀY 15/9-12/10/2020">BẢN TIN DỰ BÁO, CẢNH BÁO HẠN KHÍ TƯỢNG TẠI CÁC VÙNG TRÊN CẢ NƯỚC TỪ NGÀY 15/9-12/10/2020<label>(15/09/2020)</label></a>
+                                                                        <div class="thumb-news-nb"><img src="http://thoitietvietnam.gov.vn/upload/Article/khihau/2020/9/15/spi_obs-1.png"></div>
+                                                                    </li>
+                                                                    <li><a href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/nhan-dinh-xu-the-thoi-tiet-tu-ngay-11-thang-9-den-ngay-10-thang-10-nam-2020-cac-khu-vuc-tren-pham-vi-ca-nuoc-postkh6611.html" alt="NHẬN ĐỊNH XU THẾ THỜI TIẾT TỪ NGÀY 11 THÁNG 9 ĐẾN NGÀY 10 THÁNG 10 NĂM 2020 CÁC KHU VỰC TRÊN PHẠM VI CẢ NƯỚC">NHẬN ĐỊNH XU THẾ THỜI TIẾT TỪ NGÀY 11 THÁNG 9 ĐẾN NGÀY 10 THÁNG 10 NĂM 2020 CÁC KHU VỰC TRÊN PHẠM VI CẢ NƯỚC<label>(11/09/2020)</label></a>
+                                                                        <div class="thumb-news-nb"><img src="http://thoitietvietnam.gov.vn/upload/Article/khihau/2020/9/11/csr11081009.png"></div>
+                                                                    </li>
+                                                                    <li><a href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/ban-tin-cap-nhat-ve-hien-tuong-enso-va-nhan-dinh-xu-the-khi-tuong-thuy-van-tu-thang-nua-cuoi-thang-9-nam-2020-den-thang-3-nam-2021-postkh6609.html" alt="BẢN TIN CẬP NHẬT VỀ HIỆN TƯỢNG ENSO VÀ NHẬN ĐỊNH XU THẾ KHÍ TƯỢNG THỦY VĂN TỪ THÁNG NỬA CUỐI THÁNG 9 NĂM 2020 ĐẾN THÁNG 3 NĂM 2021">BẢN TIN CẬP NHẬT VỀ HIỆN TƯỢNG ENSO VÀ NHẬN ĐỊNH XU THẾ KHÍ TƯỢNG THỦY VĂN TỪ THÁNG NỬA CUỐI THÁNG 9 NĂM 2020 ĐẾN THÁNG 3 NĂM 2021<label>(11/09/2020)</label></a>
+                                                                        <div class="thumb-news-nb"><img src="http://thoitietvietnam.gov.vn/upload/Article/khihau/2020/9/11/lanina_djf.png"></div>
+                                                                    </li>
+                                                                    <li><a href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/ban-tin-du-bao-canh-bao-han-khi-tuong-tai-cac-vung-tren-ca-nuoc-tu-ngay-01-30-9-2020-postkh6439.html" alt="BẢN TIN DỰ BÁO, CẢNH BÁO HẠN KHÍ TƯỢNG TẠI CÁC VÙNG TRÊN CẢ NƯỚC TỪ NGÀY 01-30/9/2020">BẢN TIN DỰ BÁO, CẢNH BÁO HẠN KHÍ TƯỢNG TẠI CÁC VÙNG TRÊN CẢ NƯỚC TỪ NGÀY 01-30/9/2020<label>(01/09/2020)</label></a>
+                                                                        <div class="thumb-news-nb"><img src="http://thoitietvietnam.gov.vn/upload/Article/khihau/2020/9/1/spi082020new.png"></div>
+                                                                    </li>
+                                                                    <li><a href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/nhan-dinh-xu-the-thoi-tiet-tu-ngay-01-den-ngay-30-thang-9-nam-2020-cac-khu-vuc-tren-pham-vi-ca-nuoc-postkh6431.html" alt="NHẬN ĐỊNH XU THẾ THỜI TIẾT TỪ NGÀY 01 ĐẾN NGÀY 30 THÁNG 9 NĂM 2020 CÁC KHU VỰC TRÊN PHẠM VI CẢ NƯỚC">NHẬN ĐỊNH XU THẾ THỜI TIẾT TỪ NGÀY 01 ĐẾN NGÀY 30 THÁNG 9 NĂM 2020 CÁC KHU VỰC TRÊN PHẠM VI CẢ NƯỚC<label>(01/09/2020)</label></a>
+                                                                        <div class="thumb-news-nb"><img src="http://thoitietvietnam.gov.vn/upload/Article/khihau/2020/9/1/r10_2020.png"></div>
+                                                                    </li>
+                                                                    <li><a href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/nhan-dinh-xu-the-thoi-tiet-tu-ngay-21-thang-8-den-ngay-20-thang-9-nam-2020-cac-khu-vuc-tren-pham-vi-ca-nuoc-postkh6254.html" alt="NHẬN ĐỊNH XU THẾ THỜI TIẾT TỪ NGÀY 21 THÁNG 8 ĐẾN NGÀY 20 THÁNG 9 NĂM 2020 CÁC KHU VỰC TRÊN PHẠM VI CẢ NƯỚC">NHẬN ĐỊNH XU THẾ THỜI TIẾT TỪ NGÀY 21 THÁNG 8 ĐẾN NGÀY 20 THÁNG 9 NĂM 2020 CÁC KHU VỰC TRÊN PHẠM VI CẢ NƯỚC<label>(21/08/2020)</label></a>
+                                                                        <div class="thumb-news-nb"><img src="http://thoitietvietnam.gov.vn/upload/Article/khihau/2020/8/21/prec_w1-fcst_21082020.png"></div>
+                                                                    </li>
+                                                                    <li><a href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/ban-tin-du-bao-canh-bao-han-khi-tuong-tai-cac-vung-tren-ca-nuoc-tu-ngay-15-8-11-9-2020-postkh6096.html" alt="BẢN TIN DỰ BÁO, CẢNH BÁO HẠN KHÍ TƯỢNG TẠI CÁC VÙNG TRÊN CẢ NƯỚC TỪ NGÀY 15/8-11/9/2020">BẢN TIN DỰ BÁO, CẢNH BÁO HẠN KHÍ TƯỢNG TẠI CÁC VÙNG TRÊN CẢ NƯỚC TỪ NGÀY 15/8-11/9/2020<label>(14/08/2020)</label></a>
+                                                                        <div class="thumb-news-nb"><img src="http://thoitietvietnam.gov.vn/upload/Article/khihau/2020/8/14/spi_obs.png"></div>
+                                                                    </li>
+                                                                    <li><a href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/ban-tin-cap-nhat-ve-hien-tuong-enso-va-nhan-dinh-xu-the-khi-tuong-thuy-van-tu-thang-9-nam-2020-den-thang-02-nam-2021-postkh6093.html" alt="BẢN TIN CẬP NHẬT VỀ HIỆN TƯỢNG ENSO VÀ NHẬN ĐỊNH XU THẾ KHÍ TƯỢNG THỦY VĂN TỪ THÁNG 9 NĂM 2020 ĐẾN THÁNG 02 NĂM 2021">BẢN TIN CẬP NHẬT VỀ HIỆN TƯỢNG ENSO VÀ NHẬN ĐỊNH XU THẾ KHÍ TƯỢNG THỦY VĂN TỪ THÁNG 9 NĂM 2020 ĐẾN THÁNG 02 NĂM 2021<label>(14/08/2020)</label></a>
+                                                                        <div class="thumb-news-nb"><img src="http://thoitietvietnam.gov.vn/upload/Article/khihau/2020/8/14/cst-6thangdn2020.png"></div>
+                                                                    </li>
+                                                                    <li><a href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/nhan-dinh-xu-the-thoi-tiet-tu-ngay-11-thang-8-den-ngay-10-thang-9-nam-2020-cac-khu-vuc-tren-pham-vi-ca-nuoc-postkh6023.html" alt="NHẬN ĐỊNH XU THẾ THỜI TIẾT TỪ NGÀY 11 THÁNG 8 ĐẾN NGÀY 10 THÁNG 9 NĂM 2020 CÁC KHU VỰC TRÊN PHẠM VI CẢ NƯỚC">NHẬN ĐỊNH XU THẾ THỜI TIẾT TỪ NGÀY 11 THÁNG 8 ĐẾN NGÀY 10 THÁNG 9 NĂM 2020 CÁC KHU VỰC TRÊN PHẠM VI CẢ NƯỚC<label>(11/08/2020)</label></a>
+                                                                        <div class="thumb-news-nb"><img src="http://thoitietvietnam.gov.vn/upload/Article/khihau/2020/8/11/cst110710082020.png"></div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </article>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="logo-wrapper" class="top-border left-border right-border">
+                                        <a id="logo" target="_top" class="clickable noselect notap" data-do="title">
+                                            <div class="w-sprite"></div><img class="text" alt="kttvqg.gov.vn" width="70px" src="https://www.khituongvietnam.gov.vn/bccp/images/logo-kttv-2018.png">
+                                        </a></div>
+                                </article>
 {{ content | safe }}
 {% include "footer2.njk" %}
 {% set js %}
   {% include "js/jquery.js" %}
 {% endset %}
 <script>{{ js | jsmin | safe }}</script>
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script>
-  window.onload = function() {
-
-      Highcharts.chart('chartContainer1', {
-          chart: {
-              zoomType: 'xy'
-          },
-          title: {
-              text: null
-          },
-          credits: {
-              enabled: false
-          },
-
-          xAxis: [{
-              categories: ['1', '2', '3', '4', '5', '6',
-                  '7', '8', '9', '10', '11', '12'
-              ],
-              crosshair: true
-          }],
-          yAxis: [{ // Primary yAxis
-              labels: {
-                  format: '{value}°C',
-                  style: {
-                      color: '#FF9C2A'
-                  }
-              },
-              title: {
-                  text: 'Nhiệt độ',
-                  style: {
-                      color: '#FF9C2A'
-                  }
-              }
-          }, { // Secondary yAxis
-              title: {
-                  text: 'Lượng mưa',
-                  style: {
-                      color: Highcharts.getOptions().colors[0]
-                  }
-              },
-              labels: {
-                  format: '{value} mm',
-                  style: {
-                      color: Highcharts.getOptions().colors[0]
-                  }
-              },
-              opposite: true
-          }],
-          tooltip: {
-              shared: true
-          },
-          legend: {
-              layout: 'vertical',
-              align: 'left',
-              x: 120,
-              verticalAlign: 'top',
-              y: 100,
-              floating: true,
-              backgroundColor: Highcharts.defaultOptions.legend.backgroundColor || // theme
-                  'rgba(255,255,255,0.25)'
-          },
-          series: [{
-              name: 'Lượng mưa',
-              type: 'column',
-              yAxis: 1,
-              data: [21.6, 26.7, 53.4, 87, 197.1, 263.5, 263.5, 288.3, 190.9, 135.5, 78.2, 18.4],
-              tooltip: {
-                  valueSuffix: ' mm'
-              }
-
-          }, {
-              name: 'Nhiệt độ',
-              type: 'spline',
-              data: [16.9, 18, 20.4, 24.3, 27.5, 29.5, 29.5, 28.9, 28, 25.5, 22.1, 18.5],
-              tooltip: {
-                  valueSuffix: '°C'
-              },
-              color: '#FF9C2A'
-          }]
-      });
-
-      Highcharts.chart('chartContainerSL', {
-          chart: {
-              zoomType: 'xy'
-          },
-          title: {
-              text: null
-          },
-          credits: {
-              enabled: false
-          },
-
-          xAxis: [{
-              categories: ['1', '2', '3', '4', '5', '6',
-                  '7', '8', '9', '10', '11', '12'
-              ],
-              crosshair: true
-          }],
-          yAxis: [{ // Primary yAxis
-              labels: {
-                  format: '{value}°C',
-                  style: {
-                      color: '#FF9C2A'
-                  }
-              },
-              title: {
-                  text: 'Nhiệt độ',
-                  style: {
-                      color: '#FF9C2A'
-                  }
-              }
-          }, { // Secondary yAxis
-              title: {
-                  text: 'Lượng mưa',
-                  style: {
-                      color: Highcharts.getOptions().colors[0]
-                  }
-              },
-              labels: {
-                  format: '{value} mm',
-                  style: {
-                      color: Highcharts.getOptions().colors[0]
-                  }
-              },
-              opposite: true
-          }],
-          tooltip: {
-              shared: true
-          },
-          legend: {
-              layout: 'vertical',
-              align: 'left',
-              x: 120,
-              verticalAlign: 'top',
-              y: 100,
-              floating: true,
-              backgroundColor: Highcharts.defaultOptions.legend.backgroundColor || // theme
-                  'rgba(255,255,255,0.25)'
-          },
-          series: [{
-              name: 'Lượng mưa',
-              type: 'column',
-              yAxis: 1,
-              data: [19.1, 25, 53.4, 112.6, 202.6, 224.8, 224.8, 238.9, 130, 60.2, 39.3, 16.3],
-              tooltip: {
-                  valueSuffix: ' mm'
-              }
-
-          }, {
-              name: 'Nhiệt độ',
-              type: 'spline',
-              data: [15.3, 17.4, 20.5, 23.5, 25, 25.4, 25.4, 25, 24, 21.9, 18.6, 15.5],
-              tooltip: {
-                  valueSuffix: '°C'
-              },
-              color: '#FF9C2A'
-          }]
-      });
-
-
-
-
-      Highcharts.chart('chartContainerTN', {
-          chart: {
-              zoomType: 'xy'
-          },
-          title: {
-              text: null
-          },
-          credits: {
-              enabled: false
-          },
-
-          xAxis: [{
-              categories: ['1', '2', '3', '4', '5', '6',
-                  '7', '8', '9', '10', '11', '12'
-              ],
-              crosshair: true
-          }],
-          yAxis: [{ // Primary yAxis
-              labels: {
-                  format: '{value}°C',
-                  style: {
-                      color: '#FF9C2A'
-                  }
-              },
-              title: {
-                  text: 'Nhiệt độ',
-                  style: {
-                      color: '#FF9C2A'
-                  }
-              }
-          }, { // Secondary yAxis
-              title: {
-                  text: 'Lượng mưa',
-                  style: {
-                      color: Highcharts.getOptions().colors[0]
-                  }
-              },
-              labels: {
-                  format: '{value} mm',
-                  style: {
-                      color: Highcharts.getOptions().colors[0]
-                  }
-              },
-              opposite: true
-          }],
-          tooltip: {
-              shared: true
-          },
-          legend: {
-              layout: 'vertical',
-              align: 'left',
-              x: 120,
-              verticalAlign: 'top',
-              y: 100,
-              floating: true,
-              backgroundColor: Highcharts.defaultOptions.legend.backgroundColor || // theme
-                  'rgba(255,255,255,0.25)'
-          },
-          series: [{
-              name: 'Lượng mưa',
-              type: 'column',
-              yAxis: 1,
-              data: [24.5, 32.8, 70.2, 103.6, 246.9, 276.7, 276.7, 284.4, 200.9, 118, 57.6, 22.4],
-              tooltip: {
-                  valueSuffix: ' mm'
-              }
-
-          }, {
-              name: 'Nhiệt độ',
-              type: 'spline',
-              data: [16.3, 17.6, 20, 23.9, 27, 28.7, 28.7, 28.3, 27.3, 24.9, 21.3, 17.7],
-              tooltip: {
-                  valueSuffix: '°C'
-              },
-              color: '#FF9C2A'
-          }]
-      });
-
-      Highcharts.chart('chartContainerPL', {
-          chart: {
-              zoomType: 'xy'
-          },
-          title: {
-              text: null
-          },
-          credits: {
-              enabled: false
-          },
-
-          xAxis: [{
-              categories: ['1', '2', '3', '4', '5', '6',
-                  '7', '8', '9', '10', '11', '12'
-              ],
-              crosshair: true
-          }],
-          yAxis: [{ // Primary yAxis
-              labels: {
-                  format: '{value}°C',
-                  style: {
-                      color: '#FF9C2A'
-                  }
-              },
-              title: {
-                  text: 'Nhiệt độ',
-                  style: {
-                      color: '#FF9C2A'
-                  }
-              }
-          }, { // Secondary yAxis
-              title: {
-                  text: 'Lượng mưa',
-                  style: {
-                      color: Highcharts.getOptions().colors[0]
-                  }
-              },
-              labels: {
-                  format: '{value} mm',
-                  style: {
-                      color: Highcharts.getOptions().colors[0]
-                  }
-              },
-              opposite: true
-          }],
-          tooltip: {
-              shared: true
-          },
-          legend: {
-              layout: 'vertical',
-              align: 'left',
-              x: 120,
-              verticalAlign: 'top',
-              y: 100,
-              floating: true,
-              backgroundColor: Highcharts.defaultOptions.legend.backgroundColor || // theme
-                  'rgba(255,255,255,0.25)'
-          },
-          series: [{
-              name: 'Lượng mưa',
-              type: 'column',
-              yAxis: 1,
-              data: [35, 27.5, 54.4, 71.3, 206.7, 222, 222, 329.1, 224.7, 128.2, 46.2, 21.3],
-              tooltip: {
-                  valueSuffix: ' mm'
-              }
-
-          }, {
-              name: 'Nhiệt độ',
-              type: 'spline',
-              data: [16.5, 17.3, 19.4, 23.2, 26.4, 28.3, 28.3, 27.9, 27, 24.8, 21.6, 18.2],
-              tooltip: {
-                  valueSuffix: '°C'
-              },
-              color: '#FF9C2A'
-          }]
-      });
-
-
-      Highcharts.chart('chartContainerVinh', {
-          chart: {
-              zoomType: 'xy'
-          },
-          title: {
-              text: null
-          },
-          credits: {
-              enabled: false
-          },
-
-          xAxis: [{
-              categories: ['1', '2', '3', '4', '5', '6',
-                  '7', '8', '9', '10', '11', '12'
-              ],
-              crosshair: true
-          }],
-          yAxis: [{ // Primary yAxis
-              labels: {
-                  format: '{value}°C',
-                  style: {
-                      color: '#FF9C2A'
-                  }
-              },
-              title: {
-                  text: 'Nhiệt độ',
-                  style: {
-                      color: '#FF9C2A'
-                  }
-              }
-          }, { // Secondary yAxis
-              title: {
-                  text: 'Lượng mưa',
-                  style: {
-                      color: Highcharts.getOptions().colors[0]
-                  }
-              },
-              labels: {
-                  format: '{value} mm',
-                  style: {
-                      color: Highcharts.getOptions().colors[0]
-                  }
-              },
-              opposite: true
-          }],
-          tooltip: {
-              shared: true
-          },
-          legend: {
-              layout: 'vertical',
-              align: 'left',
-              x: 120,
-              verticalAlign: 'top',
-              y: 100,
-              floating: true,
-              backgroundColor: Highcharts.defaultOptions.legend.backgroundColor || // theme
-                  'rgba(255,255,255,0.25)'
-          },
-          series: [{
-              name: 'Lượng mưa',
-              type: 'column',
-              yAxis: 1,
-              data: [61.9, 38.2, 48.9, 61.7, 157.1, 96.8, 96.8, 263.5, 394.4, 614.4, 148.3, 66.1],
-              tooltip: {
-                  valueSuffix: ' mm'
-              }
-
-          }, {
-              name: 'Nhiệt độ',
-              type: 'spline',
-              data: [17.8, 18.6, 20.7, 24.5, 27.9, 30.1, 30.1, 28.9, 27.2, 24.8, 21.9, 18.8],
-              tooltip: {
-                  valueSuffix: '°C'
-              },
-              color: '#FF9C2A'
-          }]
-      });
-
-
-
-
-
-
-      Highcharts.chart('chartContainerNT', {
-          chart: {
-              zoomType: 'xy'
-          },
-          title: {
-              text: null
-          },
-          credits: {
-              enabled: false
-          },
-
-          xAxis: [{
-              categories: ['1', '2', '3', '4', '5', '6',
-                  '7', '8', '9', '10', '11', '12'
-              ],
-              crosshair: true
-          }],
-          yAxis: [{ // Primary yAxis
-              labels: {
-                  format: '{value}°C',
-                  style: {
-                      color: '#FF9C2A'
-                  }
-              },
-              title: {
-                  text: 'Nhiệt độ',
-                  style: {
-                      color: '#FF9C2A'
-                  }
-              }
-          }, { // Secondary yAxis
-              title: {
-                  text: 'Lượng mưa',
-                  style: {
-                      color: Highcharts.getOptions().colors[0]
-                  }
-              },
-              labels: {
-                  format: '{value} mm',
-                  style: {
-                      color: Highcharts.getOptions().colors[0]
-                  }
-              },
-              opposite: true
-          }],
-          tooltip: {
-              shared: true
-          },
-          legend: {
-              layout: 'vertical',
-              align: 'left',
-              x: 120,
-              verticalAlign: 'top',
-              y: 100,
-              floating: true,
-              backgroundColor: Highcharts.defaultOptions.legend.backgroundColor || // theme
-                  'rgba(255,255,255,0.25)'
-          },
-          series: [{
-              name: 'Lượng mưa',
-              type: 'column',
-              yAxis: 1,
-              data: [40.2, 12.1, 42.4, 39.1, 75.8, 50.7, 50.7, 58.2, 185.5, 351.3, 379.4, 166.6],
-              tooltip: {
-                  valueSuffix: ' mm'
-              }
-
-          }, {
-              name: 'Nhiệt độ',
-              type: 'spline',
-              data: [24, 24.6, 25.9, 27.5, 28.5, 28.8, 28.8, 28.5, 27.8, 26.7, 25.7, 24.5],
-              tooltip: {
-                  valueSuffix: '°C'
-              },
-              color: '#FF9C2A'
-          }]
-      });
-
-
-
-
-      Highcharts.chart('chartContainerPK', {
-          chart: {
-              zoomType: 'xy'
-          },
-          title: {
-              text: null
-          },
-          credits: {
-              enabled: false
-          },
-
-          xAxis: [{
-              categories: ['1', '2', '3', '4', '5', '6',
-                  '7', '8', '9', '10', '11', '12'
-              ],
-              crosshair: true
-          }],
-          yAxis: [{ // Primary yAxis
-              labels: {
-                  format: '{value}°C',
-                  style: {
-                      color: '#FF9C2A'
-                  }
-              },
-              title: {
-                  text: 'Nhiệt độ',
-                  style: {
-                      color: '#FF9C2A'
-                  }
-              }
-          }, { // Secondary yAxis
-              title: {
-                  text: 'Lượng mưa',
-                  style: {
-                      color: Highcharts.getOptions().colors[0]
-                  }
-              },
-              labels: {
-                  format: '{value} mm',
-                  style: {
-                      color: Highcharts.getOptions().colors[0]
-                  }
-              },
-              opposite: true
-          }],
-          tooltip: {
-              shared: true
-          },
-          legend: {
-              layout: 'vertical',
-              align: 'left',
-              x: 120,
-              verticalAlign: 'top',
-              y: 100,
-              floating: true,
-              backgroundColor: Highcharts.defaultOptions.legend.backgroundColor || // theme
-                  'rgba(255,255,255,0.25)'
-          },
-          series: [{
-              name: 'Lượng mưa',
-              type: 'column',
-              yAxis: 1,
-              data: [1.9, 6.3, 31.7, 91.5, 223.5, 327.1, 327.1, 466.2, 346, 212.3, 73.2, 10.5],
-              tooltip: {
-                  valueSuffix: ' mm'
-              }
-
-          }, {
-              name: 'Nhiệt độ',
-              type: 'spline',
-              data: [19.1, 20.8, 22.9, 24.2, 23.9, 23.1, 23.1, 22.3, 22.4, 21.9, 20.8, 19.4],
-              tooltip: {
-                  valueSuffix: '°C'
-              },
-              color: '#FF9C2A'
-          }]
-      });
-
-
-
-      Highcharts.chart('chartContainerPK', {
-          chart: {
-              zoomType: 'xy'
-          },
-          title: {
-              text: null
-          },
-          credits: {
-              enabled: false
-          },
-
-          xAxis: [{
-              categories: ['1', '2', '3', '4', '5', '6',
-                  '7', '8', '9', '10', '11', '12'
-              ],
-              crosshair: true
-          }],
-          yAxis: [{ // Primary yAxis
-              labels: {
-                  format: '{value}°C',
-                  style: {
-                      color: '#FF9C2A'
-                  }
-              },
-              title: {
-                  text: 'Nhiệt độ',
-                  style: {
-                      color: '#FF9C2A'
-                  }
-              }
-          }, { // Secondary yAxis
-              title: {
-                  text: 'Lượng mưa',
-                  style: {
-                      color: Highcharts.getOptions().colors[0]
-                  }
-              },
-              labels: {
-                  format: '{value} mm',
-                  style: {
-                      color: Highcharts.getOptions().colors[0]
-                  }
-              },
-              opposite: true
-          }],
-          tooltip: {
-              shared: true
-          },
-          legend: {
-              layout: 'vertical',
-              align: 'left',
-              x: 120,
-              verticalAlign: 'top',
-              y: 100,
-              floating: true,
-              backgroundColor: Highcharts.defaultOptions.legend.backgroundColor || // theme
-                  'rgba(255,255,255,0.25)'
-          },
-          series: [{
-              name: 'Lượng mưa',
-              type: 'column',
-              yAxis: 1,
-              data: [1.9, 6.3, 31.7, 91.5, 223.5, 327.1, 327.1, 466.2, 346, 212.3, 73.2, 10.5],
-              tooltip: {
-                  valueSuffix: ' mm'
-              }
-
-          }, {
-              name: 'Nhiệt độ',
-              type: 'spline',
-              data: [19.1, 20.8, 22.9, 24.2, 23.9, 23.1, 23.1, 22.3, 22.4, 21.9, 20.8, 19.4],
-              tooltip: {
-                  valueSuffix: '°C'
-              },
-              color: '#FF9C2A'
-          }]
-      });
-
-
-
-      Highcharts.chart('chartContainerHCM', {
-          chart: {
-              zoomType: 'xy'
-          },
-          title: {
-              text: null
-          },
-          credits: {
-              enabled: false
-          },
-
-          xAxis: [{
-              categories: ['1', '2', '3', '4', '5', '6',
-                  '7', '8', '9', '10', '11', '12'
-              ],
-              crosshair: true
-          }],
-          yAxis: [{ // Primary yAxis
-              labels: {
-                  format: '{value}°C',
-                  style: {
-                      color: '#FF9C2A'
-                  }
-              },
-              title: {
-                  text: 'Nhiệt độ',
-                  style: {
-                      color: '#FF9C2A'
-                  }
-              }
-          }, { // Secondary yAxis
-              title: {
-                  text: 'Lượng mưa',
-                  style: {
-                      color: Highcharts.getOptions().colors[0]
-                  }
-              },
-              labels: {
-                  format: '{value} mm',
-                  style: {
-                      color: Highcharts.getOptions().colors[0]
-                  }
-              },
-              opposite: true
-          }],
-          tooltip: {
-              shared: true
-          },
-          legend: {
-              layout: 'vertical',
-              align: 'left',
-              x: 120,
-              verticalAlign: 'top',
-              y: 100,
-              floating: true,
-              backgroundColor: Highcharts.defaultOptions.legend.backgroundColor || // theme
-                  'rgba(255,255,255,0.25)'
-          },
-          series: [{
-              name: 'Lượng mưa',
-              type: 'column',
-              yAxis: 1,
-              data: [10, 30, 42, 76, 199, 255, 255, 278, 284, 294, 158, 41],
-              tooltip: {
-                  valueSuffix: ' mm'
-              }
-
-          }, {
-              name: 'Nhiệt độ',
-              type: 'spline',
-              data: [26.5, 27.2, 28.4, 29.6, 29.1, 28.1, 28.1, 27.6, 27.5, 27.2, 27, 26.4],
-              tooltip: {
-                  valueSuffix: '°C'
-              },
-              color: '#FF9C2A'
-          }]
-      });
-
-
-  }
-</script>
-<script type="text/javascript" src="https://thoitietvietnam.gov.vn/Kttv/js/Paging.js"></script>
-<style>
-  .weather-forecast-list__day {
-      display: inline-block;
-      vertical-align: top;
-      min-width: 51px;
-      font-weight: 700;
-      line-height: 1;
-
-      text-align: center;
-      white-space: nowrap;
-      vertical-align: baseline;
-      border-radius: .25em;
-      padding-left: 110px;
-
-  }
-</style>
-</form>
+                              
+                                <section class="row-wrp">
+                                    <div class="wt-city uk-position-relative uk-box-shadow-small">
+                                        <h2>THỜI TIẾT CÁC TỈNH / THÀNH - CẬP NHẬT LÚC 13h - 29/10/2020</h2>
+                                        <div uk-slider="sets: true" class="ct-wt-city">
+                                            <ul class="uk-slider-items uk-child-width-auto@m uk-child-width-1-2@s uk-child-width-1-2" uk-grid="">
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/lai-chau-w64.html">Lai Châu</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">25°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/dien-bien-w38.html">Điện Biên</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">29°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/son-la-w45.html">Sơn La</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">22°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/hoa-binh-w2.html">Hòa Bình</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/111.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">21°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/lao-cai-w37.html">Lào Cai</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">23°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/yen-bai-w53.html">Yên Bái</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">21°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/ha-giang-w36.html">Hà Giang</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">25°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/tuyen-quang-w50.html">Tuyên Quang</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">22°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/bac-can-w52.html">Bắc cạn</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">23°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/thai-nguyen-w51.html">Thái Nguyên</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">24°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/phu-tho-w43.html">Phú Thọ</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/111.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">22°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/vinh-phuc-w44.html">Vĩnh Phúc</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">24°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/cao-bang-w49.html">Cao Bằng</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/111.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">21°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/lang-son-w48.html">Lạng Sơn</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/111.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">19°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/quang-ninh-w63.html">Quảng Ninh</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">26°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/bac-giang-w46.html">Bắc Giang</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">24°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/bac-ninh-w47.html">Bắc Ninh</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">24°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/hai-phong-w54.html">Hải Phòng</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">24°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/tp-ha-noi-w28.html">TP. Hà Nội</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/icon_resized/4001.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">23°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/hai-duong-w19.html">Hải Dương</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">24°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/hung-yen-w33.html">Hưng Yên</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">23°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/nam-dinh-w34.html">Nam Định</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/111.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">23°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/phu-ly-w20.html">Phủ Lý</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/111.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">22°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/ninh-binh-w17.html">Ninh Bình</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">22°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/thai-binh-w18.html">Thái Bình</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/111.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">24°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/thanh-hoa-w61.html">Thanh Hóa</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/111.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">22°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/nghe-an-w3.html">Nghệ An</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/111.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">24°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/ha-tinh-w4.html">Hà Tĩnh</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">27°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/quang-binh-w5.html">Quảng Bình</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">29°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/quang-tri-w6.html">Quảng Trị</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">29°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/hue-w7.html">Huế</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">31°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/da-nang-w55.html">Đà nẵng</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">29°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/quang-nam-w62.html">Quảng Nam</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">33°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/quang-ngai-w8.html">Quảng Ngãi</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">32°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/binh-dinh-w56.html">Bình Định</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">29°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/phu-yen-w59.html">Phú Yên</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">31°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/khanh-hoa-w9.html">Khánh Hòa</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">30°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/ninh-thuan-w60.html">Ninh Thuận</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">30°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/phan-thiet-w10.html">Phan Thiết</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">28°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/kon-tum-w11.html">Kon Tum</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">23°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/pleiku-w12.html">Pleiku</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">22°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/dak-lak-w13.html">Dak Lak</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">27°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/dak-nong-w39.html">Đắk Nông</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/300.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">28°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/da-lat-w14.html">Đà Lạt</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">22°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/binh-phuoc-w30.html">Bình Phước</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">30°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/tay-ninh-w35.html">Tây Ninh</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">31°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/dong-nai-w32.html">Đồng Nai</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">31°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/binh-duong-w16.html">Bình Dương</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">32°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/tp-ho-chi-minh-w15.html">TP. Hồ Chí Minh</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">32°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/vung-tau-w31.html">Vũng Tàu</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">30°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/long-an-w21.html">Long An</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">29°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/tien-giang-w23.html">Tiền Giang</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">26°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/vinh-long-w57.html">Vĩnh Long</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">29°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/ben-tre-w24.html">Bến tre</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">26°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/dong-thap-w22.html">Đồng Tháp</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">29°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/tra-vinh-w25.html">Trà Vinh</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">28°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/an-giang-w58.html">An Giang</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">29°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/can-tho-w26.html">Cần Thơ</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">29°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/hau-giang-w40.html">Hậu Giang</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">30°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/soc-trang-w27.html">Sóc Trăng</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">30°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/kien-giang-w41.html">Kiên Giang</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">29°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/bac-lieu-w29.html">Bạc Liêu</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">30°C</div>
+                                                </li>
+                                                <li><a class="name-wt-city" href="https://khituongvietnam.gov.vn/bccp/vi-VN/1/ca-mau-w42.html">Cà Mau</a>
+                                                    <div class="icon-wt-city"><img src="https://khituongvietnam.gov.vn/Upload/WeatherSymbol/2008/8/22/261.png" style="width: 45px; height: 45px;"></div>
+                                                    <div class="temp-wt-city">30°C</div>
+                                                </li>
+                                            </ul>
+                                            <a class="uk-position-top-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+                                            <a class="uk-position-top-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+                                        </div>
+                                    </div>
+                                </section>
+                            </aside>
+                        </div>
+                    </div>
+                </section>
+                <section class="row-wrp">
+                    <div uk-grid="">
+                    </div>
+                </section>
+            </div>
+        </div>
+    </form>
 </body>
+
 </html>
